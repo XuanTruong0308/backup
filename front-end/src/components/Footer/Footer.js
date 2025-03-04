@@ -21,13 +21,13 @@ const Footer = () => {
               </p> {/* Giới thiệu ngắn về TechKids */}
               
               <div className="social-links">
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.facebook.com/share/167rvBwmnB/" target="_blank" rel="noopener noreferrer">
                   <i className="fab fa-facebook-f"></i>
                 </a>
                 <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
                   <i className="fab fa-twitter"></i>
                 </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.instagram.com/chunkira.11298/profilecard/?igsh=MWRnenJ0MnJ0aDluMw==" target="_blank" rel="noopener noreferrer">
                   <i className="fab fa-instagram"></i>
                 </a>
                 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">

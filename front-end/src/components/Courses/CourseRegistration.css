@@ -1,0 +1,123 @@
+/* Style cho container chính */
+.course-registration {
+  max-width: 600px;          /* Giới hạn độ rộng tối đa */
+  margin: 40px auto;         /* Căn giữa và tạo khoảng cách với lề trên dưới */
+  padding: 20px;             /* Tạo khoảng cách nội dung với viền */
+  background-color: #ffffff; /* Nền trắng */
+  border-radius: 8px;        /* Bo tròn góc */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Tạo bóng đổ nhẹ */
+}
+
+/* Style cho tiêu đề */
+.course-registration h2 {
+  text-align: center;    /* Căn giữa text */
+  color: #333;          /* Màu chữ xám đậm */
+  margin-bottom: 30px;  /* Khoảng cách với phần form bên dưới */
+}
+
+/* Style cho form */
+.registration-form {
+  display: flex;           /* Sử dụng flexbox */
+  flex-direction: column;  /* Xếp các phần tử theo chiều dọc */
+  gap: 20px;              /* Khoảng cách giữa các nhóm form */
+}
+
+/* Style cho nhóm form (label + input) */
+.form-group {
+  display: flex;           /* Sử dụng flexbox */
+  flex-direction: column;  /* Xếp label và input theo chiều dọc */
+  gap: 8px;               /* Khoảng cách giữa label và input */
+}
+
+/* Style cho label */
+.form-group label {
+  font-weight: 500;  /* Độ đậm chữ */
+  color: #333;       /* Màu chữ xám đậm */
+}
+
+/* Style chung cho input, select và textarea */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 10px;                        /* Khoảng cách nội dung với viền */
+  border: 1px solid #ddd;               /* Viền xám nhạt */
+  border-radius: 4px;                   /* Bo tròn góc */
+  font-size: 16px;                      /* Kích thước chữ */
+  transition: border-color 0.3s ease;   /* Hiệu ứng đổi màu viền */
+}
+
+/* Style khi focus vào input */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;                /* Bỏ viền focus mặc định */
+  border-color: #007bff;       /* Đổi màu viền khi focus */
+}
+
+/* Style cho input khi có lỗi */
+.form-group input.error,
+.form-group select.error {
+  border-color: #dc3545;  /* Viền đỏ khi có lỗi */
+}
+
+/* Style cho thông báo lỗi */
+.error-message {
+  color: #dc3545;     /* Màu chữ đỏ */
+  font-size: 14px;    /* Kích thước chữ nhỏ hơn */
+  margin-top: 4px;    /* Khoảng cách với input phía trên */
+}
+
+/* Style cho thông báo lỗi chung */
+.submit-error {
+  text-align: center;                /* Căn giữa text */
+  padding: 10px;                     /* Khoảng cách nội dung với viền */
+  background-color: #fff3f3;         /* Nền hồng nhạt */
+  border: 1px solid #dc3545;         /* Viền đỏ */
+  border-radius: 4px;                /* Bo tròn góc */
+  margin-bottom: 15px;               /* Khoảng cách với nút submit */
+}
+
+/* Style cho nút submit */
+.submit-button {
+  background-color: #007bff;           /* Màu nền xanh */
+  color: white;                        /* Chữ trắng */
+  padding: 12px 24px;                  /* Khoảng cách nội dung với viền */
+  border: none;                        /* Bỏ viền */
+  border-radius: 4px;                  /* Bo tròn góc */
+  font-size: 16px;                     /* Kích thước chữ */
+  font-weight: 500;                    /* Độ đậm chữ */
+  cursor: pointer;                     /* Con trỏ pointer khi hover */
+  transition: background-color 0.3s ease; /* Hiệu ứng đổi màu */
+}
+
+/* Style khi hover nút submit */
+.submit-button:hover {
+  background-color: #0056b3;  /* Màu xanh đậm hơn khi hover */
+}
+
+/* Style khi nút submit bị disabled */
+.submit-button:disabled {
+  background-color: #ccc;     /* Màu xám khi disabled */
+  cursor: not-allowed;        /* Con trỏ not-allowed */
+}
+
+/* Responsive styles cho màn hình nhỏ */
+@media (max-width: 768px) {
+  /* Điều chỉnh khoảng cách container */
+  .course-registration {
+    margin: 20px;
+    padding: 15px;
+  }
+  
+  /* Giảm kích thước chữ của input */
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 14px;
+  }
+  
+  /* Nút submit full width trên mobile */
+  .submit-button {
+    width: 100%;
+  }
+}

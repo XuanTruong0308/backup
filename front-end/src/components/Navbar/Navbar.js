@@ -51,7 +51,7 @@ const Navbar = () => {
             <ul className="dropdown-menu">
               <li><Link to="/courses/overview">Tổng Quan Khóa Học</Link></li>
               <li><Link to="/courses">Chương Trình Học</Link></li>
-              <li><Link to="/courses/CourseRegistration">Đăng Ký</Link></li>
+              <li><Link to="/courses/register">Đăng Ký</Link></li>
             </ul>
           </li>
           
