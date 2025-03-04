@@ -1,0 +1,188 @@
+/* About Section - Phần giới thiệu */
+.about-section {
+  padding: 100px 0;          /* Tạo khoảng cách trên dưới lớn */
+  background-color: var(--light-bg, #f8f9fa);  /* Màu nền nhẹ */
+}
+
+/* Container - Giới hạn chiều rộng nội dung */
+.container {
+  max-width: 1200px;         /* Chiều rộng tối đa */
+  margin: 0 auto;            /* Căn giữa container */
+  padding: 0 20px;           /* Khoảng cách với mép màn hình */
+}
+
+/* Section Header - Phần tiêu đề của section */
+.section-header {
+  text-align: center;        /* Căn giữa nội dung */
+  margin-bottom: 60px;       /* Khoảng cách với nội dung bên dưới */
+}
+
+/* Section Title - Tiêu đề chính */
+.section-title {
+  font-size: 2.5rem;         /* Kích thước chữ lớn */
+  color: var(--text-color, #333);  /* Màu chữ chính */
+  margin-bottom: 15px;       /* Khoảng cách với subtitle */
+  font-weight: 700;          /* Độ đậm của chữ */
+}
+
+/* Section Subtitle - Tiêu đề phụ */
+.section-subtitle {
+  font-size: 1.1rem;         /* Kích thước chữ */
+  color: var(--secondary-color, #666);  /* Màu chữ phụ */
+  max-width: 600px;          /* Giới hạn chiều rộng */
+  margin: 0 auto;            /* Căn giữa */
+}
+
+/* About Content - Phần nội dung chính */
+.about-content {
+  display: grid;             /* Sử dụng CSS Grid */
+  grid-template-columns: 1fr 1fr;  /* Chia 2 cột bằng nhau */
+  gap: 50px;                /* Khoảng cách giữa các cột */
+  align-items: center;       /* Căn giữa theo chiều dọc */
+}
+
+/* About Image - Phần hình ảnh */
+.about-image {
+  position: relative;        /* Cho phép định vị con tuyệt đối */
+  border-radius: 10px;       /* Bo tròn góc */
+  overflow: hidden;          /* Ẩn phần tràn */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);  /* Đổ bóng */
+}
+
+/* Image trong about */
+.about-image img {
+  width: 100%;              /* Chiều rộng 100% container */
+  height: auto;             /* Tự động tính chiều cao */
+  display: block;           /* Loại bỏ khoảng trống dưới ảnh */
+  transition: transform 0.3s ease;  /* Hiệu ứng hover */
+}
+
+/* Hiệu ứng hover cho ảnh */
+.about-image:hover img {
+  transform: scale(1.05);    /* Phóng to ảnh nhẹ */
+}
+
+/* About Text - Phần văn bản */
+.about-text {
+  padding-left: 20px;        /* Tạo khoảng cách với ảnh */
+}
+
+/* Tiêu đề trong phần text */
+.about-text h3 {
+  font-size: 2rem;           /* Kích thước chữ */
+  color: var(--text-color, #333);  /* Màu chữ */
+  margin-bottom: 20px;       /* Khoảng cách với đoạn văn */
+}
+
+/* Đoạn văn trong phần text */
+.about-text p {
+  font-size: 1.1rem;         /* Kích thước chữ */
+  line-height: 1.8;          /* Khoảng cách dòng */
+  color: var(--secondary-color, #666);  /* Màu chữ phụ */
+  margin-bottom: 30px;       /* Khoảng cách với phần features */
+}
+
+/* Features - Phần tính năng nổi bật */
+.features {
+  display: grid;             /* Sử dụng CSS Grid */
+  grid-template-columns: repeat(2, 1fr);  /* 2 cột bằng nhau */
+  gap: 30px;                /* Khoảng cách giữa các feature */
+  margin-bottom: 40px;       /* Khoảng cách với CTA */
+}
+
+/* Feature Item - Từng tính năng */
+.feature-item {
+  text-align: left;          /* Căn trái nội dung */
+  padding: 20px;             /* Padding đều */
+  background: white;         /* Nền trắng */
+  border-radius: 8px;        /* Bo tròn góc */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);  /* Đổ bóng nhẹ */
+  transition: transform 0.3s ease;  /* Hiệu ứng hover */
+}
+
+/* Hiệu ứng hover cho feature */
+.feature-item:hover {
+  transform: translateY(-5px);  /* Nâng nhẹ khi hover */
+}
+
+/* Icon trong feature */
+.feature-item i {
+  font-size: 2rem;           /* Kích thước icon */
+  color: var(--primary-color, #007bff);  /* Màu icon */
+  margin-bottom: 15px;       /* Khoảng cách với tiêu đề */
+}
+
+/* Tiêu đề feature */
+.feature-item h4 {
+  font-size: 1.2rem;         /* Kích thước chữ */
+  color: var(--text-color, #333);  /* Màu chữ */
+  margin-bottom: 10px;       /* Khoảng cách với mô tả */
+}
+
+/* Mô tả feature */
+.feature-item p {
+  font-size: 0.95rem;        /* Kích thước chữ */
+  color: var(--secondary-color, #666);  /* Màu chữ phụ */
+  margin: 0;                 /* Bỏ margin */
+}
+
+/* About CTA - Phần call to action */
+.about-cta {
+  text-align: center;        /* Căn giữa nội dung */
+  margin-top: 40px;          /* Khoảng cách với features */
+}
+
+/* Text trong CTA */
+.cta-text {
+  font-size: 1.2rem;         /* Kích thước chữ */
+  color: var(--text-color, #333);  /* Màu chữ */
+  margin-bottom: 20px;       /* Khoảng cách với nút */
+  font-weight: 500;          /* Độ đậm vừa phải */
+}
+
+/* Responsive cho tablet */
+@media (max-width: 1024px) {
+  .about-content {
+    gap: 30px;              /* Giảm khoảng cách giữa ảnh và text */
+  }
+
+  .features {
+    gap: 20px;              /* Giảm khoảng cách giữa features */
+  }
+
+  .section-title {
+    font-size: 2.2rem;      /* Giảm cỡ chữ tiêu đề */
+  }
+}
+
+/* Responsive cho mobile */
+@media (max-width: 768px) {
+  .about-section {
+    padding: 60px 0;        /* Giảm padding section */
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;  /* Chuyển layout thành 1 cột */
+    gap: 40px;              /* Tăng khoảng cách giữa các phần */
+  }
+
+  .about-text {
+    padding-left: 0;        /* Bỏ padding trái */
+  }
+
+  .features {
+    grid-template-columns: 1fr;  /* Chuyển features thành 1 cột */
+  }
+
+  .section-title {
+    font-size: 2rem;        /* Giảm cỡ chữ tiêu đề */
+  }
+
+  .about-text h3 {
+    font-size: 1.8rem;      /* Giảm cỡ chữ tiêu đề */
+  }
+
+  .feature-item {
+    text-align: center;     /* Căn giữa nội dung feature */
+  }
+} 

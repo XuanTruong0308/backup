@@ -1,0 +1,392 @@
+/**
+ * Styles cho trang khóa học
+ * Định nghĩa layout và styles chung cho toàn bộ trang
+ */
+.courses-page {
+  min-height: 100vh; /* Đảm bảo trang có chiều cao tối thiểu bằng viewport */
+  background-color: var(--light-bg); /* Màu nền nhẹ cho toàn trang */
+}
+
+/**
+ * Header của trang
+ * Tạo background gradient với overlay màu xanh và hình nền
+ */
+.courses-header {
+  background: linear-gradient(rgba(0, 123, 255, 0.9), rgba(0, 123, 255, 0.9)), url('../../assets/images/courses-bg.jpg');
+  background-size: cover; /* Đảm bảo hình nền phủ kín */
+  background-position: center; /* Căn giữa hình nền */
+  padding: 80px 0; /* Khoảng cách trên dưới */
+  text-align: center;
+  color: white;
+}
+
+/* Tiêu đề chính của trang */
+.page-title {
+  font-size: 3rem; /* Cỡ chữ lớn cho tiêu đề */
+  margin-bottom: 20px;
+}
+
+/* Mô tả ngắn dưới tiêu đề */
+.page-description {
+  font-size: 1.2rem;
+  max-width: 800px; /* Giới hạn chiều rộng để dễ đọc */
+  margin: 0 auto; /* Căn giữa */
+  opacity: 0.9; /* Làm mờ nhẹ */
+}
+
+/**
+ * Container chung
+ * Giới hạn chiều rộng nội dung và căn giữa
+ */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px; /* Padding hai bên */
+}
+
+/* Phần nội dung chính của trang */
+.courses-content {
+  padding: 60px 0; /* Khoảng cách trên dưới */
+}
+
+/**
+ * Thanh tìm kiếm
+ * Tạo thanh tìm kiếm với icon và hiệu ứng focus
+ */
+.search-bar {
+  position: relative; /* Để định vị icon search */
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+/* Input tìm kiếm */
+.search-bar input {
+  width: 100%;
+  padding: 15px 20px;
+  padding-right: 50px; /* Tạo khoảng trống cho icon */
+  border: 2px solid #e1e1e1;
+  border-radius: 30px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+/* Hiệu ứng khi focus vào input */
+.search-bar input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+/* Icon tìm kiếm */
+.search-bar i {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+}
+
+/**
+ * Phần bộ lọc
+ * Layout cho các nút lọc theo cấp độ và độ tuổi
+ */
+.filters {
+  margin-bottom: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+/* Nhóm bộ lọc */
+.filter-group {
+  text-align: center;
+}
+
+/* Tiêu đề nhóm bộ lọc */
+.filter-group h3 {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  margin-bottom: 15px;
+}
+
+/* Container cho các nút lọc */
+.filter-options {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/**
+ * Nút lọc
+ * Style và hiệu ứng cho các nút lọc
+ */
+.filter-btn {
+  padding: 8px 20px;
+  border: 1px solid var(--primary-color);
+  border-radius: 20px;
+  background: transparent;
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hiệu ứng hover và trạng thái active */
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--primary-color);
+  color: white;
+}
+
+/**
+ * Grid khóa học
+ * Layout responsive cho danh sách khóa học
+ */
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+/**
+ * Card khóa học
+ * Style cho từng card khóa học
+ */
+.course-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+/* Hiệu ứng hover cho card */
+.course-card:hover {
+  transform: translateY(-5px);
+}
+
+/**
+ * Phần hình ảnh khóa học
+ * Container cho hình ảnh và badge level
+ */
+.course-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+/* Style cho hình ảnh */
+.course-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* Hiệu ứng zoom khi hover */
+.course-card:hover .course-image img {
+  transform: scale(1.1);
+}
+
+/**
+ * Badge level khóa học
+ * Hiển thị cấp độ của khóa học
+ */
+.course-level {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: var(--primary-color);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+/**
+ * Phần nội dung khóa học
+ * Container cho thông tin chi tiết
+ */
+.course-content {
+  padding: 20px;
+}
+
+/* Tiêu đề khóa học */
+.course-title {
+  font-size: 1.3rem;
+  color: var(--text-color);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+/**
+ * Mô tả khóa học
+ * Giới hạn số dòng hiển thị
+ */
+.course-description {
+  color: var(--secondary-color);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Giới hạn 3 dòng */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/**
+ * Chi tiết khóa học
+ * Grid layout cho các thông tin phụ
+ */
+.course-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-bottom: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+/* Item trong phần chi tiết */
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--secondary-color);
+  font-size: 0.9rem;
+}
+
+/* Icon trong phần chi tiết */
+.detail-item i {
+  color: var(--primary-color);
+  font-size: 1rem;
+}
+
+/**
+ * Phần nút hành động
+ * Layout cho các nút
+ */
+.course-actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* Style chung cho nút */
+.btn {
+  flex: 1;
+  padding: 12px;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+/* Nút outline */
+.btn-outline {
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  background: transparent;
+}
+
+/* Hiệu ứng hover cho nút outline */
+.btn-outline:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* Nút primary */
+.btn-primary {
+  background: var(--primary-color);
+  color: white;
+  border: 1px solid var(--primary-color);
+}
+
+/* Hiệu ứng hover cho nút primary */
+.btn-primary:hover {
+  background: #0056b3;
+  border-color: #0056b3;
+}
+
+/**
+ * Thông báo không có kết quả
+ * Hiển thị khi không tìm thấy khóa học
+ */
+.no-results {
+  text-align: center;
+  padding: 40px 0;
+  color: var(--secondary-color);
+}
+
+/* Icon trong thông báo không có kết quả */
+.no-results i {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  opacity: 0.5;
+}
+
+/**
+ * Responsive Design
+ * Điều chỉnh layout cho màn hình nhỏ
+ */
+@media (max-width: 768px) {
+  /* Điều chỉnh padding header */
+  .courses-header {
+    padding: 60px 0;
+  }
+
+  /* Giảm cỡ chữ tiêu đề */
+  .page-title {
+    font-size: 2.5rem;
+  }
+
+  /* Điều chỉnh mô tả */
+  .page-description {
+    font-size: 1.1rem;
+    padding: 0 20px;
+  }
+
+  /* Giảm padding nội dung */
+  .courses-content {
+    padding: 40px 0;
+  }
+
+  /* Điều chỉnh margin thanh tìm kiếm */
+  .search-bar {
+    margin-bottom: 30px;
+  }
+
+  /* Giảm khoảng cách giữa các bộ lọc */
+  .filters {
+    gap: 20px;
+  }
+
+  /* Bộ lọc full width trên mobile */
+  .filter-group {
+    width: 100%;
+  }
+
+  /* Chuyển grid thành 1 cột */
+  .courses-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* Giảm chiều cao ảnh */
+  .course-image {
+    height: 180px;
+  }
+
+  /* Chuyển chi tiết thành 1 cột */
+  .course-details {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  /* Chuyển nút hành động thành dọc */
+  .course-actions {
+    flex-direction: column;
+  }
+}

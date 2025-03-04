@@ -1,0 +1,256 @@
+/* Section testimonials */
+.testimonials {
+  padding: 80px 0;           /* Padding trên dưới 80px */
+  background-color: var(--light-bg); /* Màu nền từ biến */
+  position: relative;        /* Để định vị các phần tử con */
+}
+
+/* Container chung */
+.container {
+  max-width: 1200px;        /* Chiều rộng tối đa */
+  margin: 0 auto;           /* Căn giữa container */
+  padding: 0 20px;          /* Padding hai bên */
+}
+
+/* Tiêu đề section */
+.section-title {
+  text-align: center;       /* Căn giữa text */
+  font-size: 2.5rem;        /* Cỡ chữ lớn */
+  color: var(--text-color); /* Màu chữ từ biến */
+  margin-bottom: 50px;      /* Khoảng cách dưới */
+}
+
+/* Container slider */
+.testimonials-slider {
+  position: relative;       /* Để định vị nút điều hướng */
+  max-width: 800px;        /* Chiều rộng tối đa */
+  margin: 0 auto;          /* Căn giữa */
+  padding: 0 60px;         /* Padding cho nút điều hướng */
+  overflow: visible;       /* Cho phép hiển thị phần tử tràn */
+}
+
+/* Container cards */
+.testimonial-cards {
+  position: relative;      /* Để định vị các card */
+  height: 400px;          /* Chiều cao cố định */
+}
+
+/* Card testimonial */
+.testimonial-card {
+  position: absolute;      /* Định vị tuyệt đối */
+  width: 100%;            /* Chiều rộng 100% */
+  height: 100%;           /* Chiều cao 100% */
+  opacity: 0;             /* Ban đầu ẩn */
+  transition: all 0.5s ease; /* Hiệu ứng */
+  visibility: hidden;     /* Ẩn card */
+}
+
+/* Card đang active */
+.testimonial-card.active {
+  opacity: 1;             /* Hiện card */
+  visibility: visible;    /* Hiển thị card */
+}
+
+/* Nội dung testimonial */
+.testimonial-content {
+  background: white;      /* Nền trắng */
+  padding: 40px;         /* Padding đều */
+  border-radius: 10px;   /* Bo góc */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+  text-align: center;    /* Căn giữa text */
+}
+
+/* Text testimonial */
+.testimonial-text {
+  font-size: 1.2rem;     /* Cỡ chữ */
+  color: var(--text-color); /* Màu chữ */
+  line-height: 1.6;      /* Khoảng cách dòng */
+  margin-bottom: 30px;   /* Khoảng cách dưới */
+  font-style: italic;    /* Chữ nghiêng */
+}
+
+/* Phần thông tin tác giả */
+.testimonial-author {
+  display: flex;         /* Sử dụng flexbox */
+  align-items: center;   /* Căn giữa theo chiều dọc */
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  gap: 15px;            /* Khoảng cách giữa ảnh và thông tin */
+}
+
+/* Ảnh tác giả */
+.author-image {
+  width: 70px;          /* Chiều rộng */
+  height: 70px;         /* Chiều cao */
+  border-radius: 50%;   /* Bo tròn */
+  overflow: hidden;     /* Ẩn phần tràn */
+  border: 3px solid var(--primary-color); /* Viền */
+}
+
+.author-image img {
+  width: 100%;          /* Chiều rộng 100% */
+  height: 100%;         /* Chiều cao 100% */
+  object-fit: cover;    /* Căn chỉnh ảnh */
+}
+
+/* Thông tin tác giả */
+.author-info {
+  text-align: left;     /* Căn trái text */
+}
+
+.author-name {
+  font-size: 1.1rem;    /* Cỡ chữ */
+  color: var(--text-color); /* Màu chữ */
+  margin-bottom: 5px;   /* Khoảng cách dưới */
+}
+
+.author-role {
+  font-size: 0.9rem;    /* Cỡ chữ */
+  color: var(--secondary-color); /* Màu chữ phụ */
+}
+
+/* Nút điều hướng */
+.slider-btn {
+  position: absolute;    /* Định vị tuyệt đối */
+  top: 50%;             /* Căn giữa theo chiều dọc */
+  transform: translateY(-50%); /* Dịch lên 50% */
+  width: 48px;          /* Chiều rộng */
+  height: 48px;         /* Chiều cao */
+  border: 2px solid #e1e1e1; /* Viền */
+  border-radius: 50%;   /* Bo tròn */
+  background: rgba(255, 255, 255, 0.9); /* Nền trắng trong suốt */
+  cursor: pointer;      /* Con trỏ pointer */
+  display: flex;        /* Sử dụng flexbox */
+  align-items: center;  /* Căn giữa theo chiều dọc */
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  transition: all 0.3s ease; /* Hiệu ứng */
+  z-index: 10;         /* Đảm bảo hiển thị trên các phần tử khác */
+}
+
+/* Icon trong nút */
+.slider-btn i {
+  font-size: 20px;     /* Cỡ chữ */
+  color: #666;         /* Màu icon */
+  transition: color 0.3s ease; /* Hiệu ứng màu */
+}
+
+/* Hiệu ứng hover cho nút */
+.slider-btn:hover {
+  background: var(--primary-color); /* Màu nền khi hover */
+  border-color: var(--primary-color); /* Màu viền khi hover */
+  transform: translateY(-50%) scale(1.05); /* Phóng to nút */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Đổ bóng */
+}
+
+/* Màu icon khi hover nút */
+.slider-btn:hover i {
+  color: white;        /* Đổi màu icon thành trắng */
+}
+
+/* Hiệu ứng click cho nút */
+.slider-btn:active {
+  transform: translateY(-50%) scale(0.95); /* Thu nhỏ nút */
+}
+
+/* Vị trí nút prev */
+.slider-btn.prev {
+  left: 0;            /* Nút prev bên trái */
+}
+
+/* Vị trí nút next */
+.slider-btn.next {
+  right: 0;           /* Nút next bên phải */
+}
+
+/* Navigation dots */
+.slider-dots {
+  display: flex;      /* Sử dụng flexbox */
+  justify-content: center; /* Căn giữa */
+  gap: 10px;         /* Khoảng cách giữa các dots */
+  margin-top: 30px;  /* Khoảng cách trên */
+}
+
+/* Dot */
+.dot {
+  width: 10px;       /* Chiều rộng */
+  height: 10px;      /* Chiều cao */
+  border-radius: 50%; /* Bo tròn */
+  border: none;      /* Bỏ viền */
+  background: #ddd;  /* Màu nền */
+  cursor: pointer;   /* Con trỏ pointer */
+  transition: all 0.3s ease; /* Hiệu ứng */
+}
+
+/* Dot đang active */
+.dot.active {
+  background: var(--primary-color); /* Màu nền */
+  transform: scale(1.2); /* Phóng to */
+}
+
+/* Animation cho slide */
+@keyframes fadeIn {
+  from {
+    opacity: 0;      /* Bắt đầu ẩn */
+    transform: translateX(50px); /* Dịch phải */
+  }
+  to {
+    opacity: 1;      /* Kết thúc hiện */
+    transform: translateX(0); /* Về vị trí gốc */
+  }
+}
+
+/* Áp dụng animation cho card active */
+.testimonial-card.active {
+  animation: fadeIn 0.5s ease forwards; /* Sử dụng animation */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .testimonials {
+    padding: 60px 0;   /* Giảm padding */
+  }
+
+  .section-title {
+    font-size: 2rem;   /* Giảm cỡ chữ */
+    margin-bottom: 40px; /* Giảm margin */
+  }
+
+  .testimonial-content {
+    padding: 30px 20px; /* Giảm padding */
+  }
+
+  .testimonial-text {
+    font-size: 1rem;   /* Giảm cỡ chữ */
+  }
+
+  .testimonial-author {
+    flex-direction: column; /* Chuyển layout thành dọc */
+    text-align: center;    /* Căn giữa text */
+  }
+
+  .author-info {
+    text-align: center;   /* Căn giữa text */
+  }
+
+  .slider-btn {
+    width: 40px;         /* Giảm kích thước nút */
+    height: 40px;        /* Giảm kích thước nút */
+    background: rgba(255, 255, 255, 0.95); /* Tăng độ đục */
+    border: 1px solid #e1e1e1; /* Giảm độ dày viền */
+  }
+
+  .slider-btn i {
+    font-size: 16px;    /* Giảm cỡ icon */
+  }
+
+  .slider-btn.prev {
+    left: 10px;         /* Điều chỉnh vị trí */
+  }
+
+  .slider-btn.next {
+    right: 10px;        /* Điều chỉnh vị trí */
+  }
+
+  .testimonials-slider {
+    padding: 0 50px;    /* Giảm padding */
+  }
+}

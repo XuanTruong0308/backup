@@ -1,0 +1,360 @@
+/* Contact Section - Phần liên hệ */
+.contact-section {
+  padding: 100px 0;          /* Khoảng cách trên dưới lớn */
+  background-color: var(--light-bg, #f8f9fa);  /* Màu nền nhẹ */
+}
+
+/* Container - Giới hạn chiều rộng nội dung */
+.container {
+  max-width: 1200px;         /* Chiều rộng tối đa */
+  margin: 0 auto;            /* Căn giữa container */
+  padding: 0 20px;           /* Khoảng cách với mép màn hình */
+}
+
+/* Section Header - Phần tiêu đề */
+.section-header {
+  text-align: center;        /* Căn giữa nội dung */
+  margin-bottom: 60px;       /* Khoảng cách với nội dung bên dưới */
+}
+
+/* Section Title - Tiêu đề chính */
+.section-title {
+  font-size: 2.5rem;         /* Kích thước chữ lớn */
+  color: var(--text-color, #333);  /* Màu chữ chính */
+  margin-bottom: 15px;       /* Khoảng cách với subtitle */
+}
+
+/* Section Subtitle - Tiêu đề phụ */
+.section-subtitle {
+  font-size: 1.1rem;         /* Kích thước chữ */
+  color: var(--secondary-color, #666);  /* Màu chữ phụ */
+  max-width: 600px;          /* Giới hạn chiều rộng */
+  margin: 0 auto;            /* Căn giữa */
+}
+
+/* Contact Content - Layout chính */
+.contact-content {
+  display: grid;             /* Sử dụng CSS Grid */
+  grid-template-columns: 1fr 2fr;  /* Tỷ lệ cột 1:2 */
+  gap: 50px;                /* Khoảng cách giữa info và form */
+  align-items: start;       /* Căn đầu các phần tử */
+}
+
+/* Contact Info - Phần thông tin liên hệ */
+.contact-info {
+  background: white;         /* Nền trắng */
+  padding: 30px;            /* Padding đều */
+  border-radius: 10px;      /* Bo tròn góc */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);  /* Đổ bóng nhẹ */
+}
+
+/* Info Item - Từng mục thông tin */
+.info-item {
+  display: flex;            /* Sử dụng flexbox */
+  align-items: flex-start;  /* Căn đầu các phần tử */
+  margin-bottom: 25px;      /* Khoảng cách giữa các mục */
+  padding-bottom: 25px;     /* Padding dưới */
+  border-bottom: 1px solid #eee;  /* Đường kẻ phân cách */
+}
+
+/* Icon trong info item */
+.info-item i {
+  font-size: 1.5rem;        /* Kích thước icon */
+  color: var(--primary-color, #007bff);  /* Màu icon */
+  margin-right: 15px;       /* Khoảng cách với nội dung */
+  margin-top: 5px;          /* Dịch xuống một chút */
+}
+
+/* Info Details - Phần nội dung thông tin */
+.info-details h4 {
+  font-size: 1.1rem;        /* Kích thước tiêu đề */
+  color: var(--text-color, #333);  /* Màu chữ */
+  margin-bottom: 5px;       /* Khoảng cách với đoạn text */
+}
+
+/* Đoạn text trong info */
+.info-details p {
+  color: var(--secondary-color, #666);  /* Màu chữ phụ */
+  font-size: 1rem;          /* Kích thước chữ */
+  line-height: 1.6;         /* Khoảng cách dòng */
+}
+
+/* Contact Form - Phần form liên hệ */
+.contact-form {
+  background: white;        /* Nền trắng */
+  padding: 40px;           /* Padding lớn */
+  border-radius: 10px;     /* Bo tròn góc */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);  /* Đổ bóng nhẹ */
+}
+
+/* Form Group - Nhóm input */
+.form-group {
+  margin-bottom: 25px;     /* Khoảng cách giữa các nhóm */
+}
+
+/* Label trong form */
+.form-group label {
+  display: block;          /* Hiển thị trên một dòng riêng */
+  font-size: 1rem;         /* Kích thước chữ */
+  color: var(--text-color, #333);  /* Màu chữ */
+  margin-bottom: 8px;      /* Khoảng cách với input */
+}
+
+/* Input và Textarea */
+.form-group input,
+.form-group textarea {
+  width: 100%;             /* Chiều rộng 100% */
+  padding: 12px 15px;      /* Padding trong */
+  border: 1px solid #ddd;  /* Viền nhẹ */
+  border-radius: 5px;      /* Bo tròn góc */
+  font-size: 1rem;         /* Kích thước chữ */
+  transition: all 0.3s;    /* Hiệu ứng chuyển động */
+}
+
+/* Focus state cho input và textarea */
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--primary-color, #007bff);  /* Đổi màu viền */
+  outline: none;           /* Bỏ outline mặc định */
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);  /* Thêm shadow */
+}
+
+/* Nút submit */
+.btn-primary {
+  width: 100%;             /* Chiều rộng 100% */
+  padding: 15px;           /* Padding lớn */
+  background: var(--primary-color, #007bff);  /* Màu nền */
+  color: white;            /* Màu chữ */
+  border: none;            /* Bỏ viền */
+  border-radius: 5px;      /* Bo tròn góc */
+  font-size: 1.1rem;       /* Kích thước chữ */
+  cursor: pointer;         /* Con trỏ pointer */
+  transition: all 0.3s;    /* Hiệu ứng chuyển động */
+}
+
+/* Hover state cho nút */
+.btn-primary:hover {
+  background: var(--primary-dark, #0056b3);  /* Màu nền đậm hơn */
+  transform: translateY(-2px);  /* Nâng nhẹ nút lên */
+}
+
+/* Notification - Thông báo */
+.notification {
+  margin-top: 20px;        /* Khoảng cách với form */
+  padding: 15px;           /* Padding đều */
+  border-radius: 5px;      /* Bo tròn góc */
+  text-align: center;      /* Căn giữa text */
+  animation: fadeIn 0.3s;  /* Hiệu ứng hiện */
+}
+
+/* Success notification */
+.notification.success {
+  background-color: #d4edda;  /* Màu nền xanh nhạt */
+  color: #155724;             /* Màu chữ xanh đậm */
+  border: 1px solid #c3e6cb;  /* Viền xanh nhạt */
+}
+
+/* Error notification */
+.notification.error {
+  background-color: #f8d7da;  /* Màu nền đỏ nhạt */
+  color: #721c24;             /* Màu chữ đỏ đậm */
+  border: 1px solid #f5c6cb;  /* Viền đỏ nhạt */
+}
+
+/* Animation cho notification */
+@keyframes fadeIn {
+  from {
+    opacity: 0;            /* Bắt đầu trong suốt */
+    transform: translateY(-10px);  /* Vị trí bắt đầu cao hơn */
+  }
+  to {
+    opacity: 1;            /* Kết thúc hiện rõ */
+    transform: translateY(0);  /* Trở về vị trí gốc */
+  }
+}
+
+/* Responsive cho tablet */
+@media (max-width: 1024px) {
+  .contact-content {
+    gap: 30px;            /* Giảm khoảng cách */
+  }
+
+  .contact-form {
+    padding: 30px;        /* Giảm padding */
+  }
+}
+
+/* Responsive cho mobile */
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 60px 0;      /* Giảm padding section */
+  }
+
+  .contact-content {
+    grid-template-columns: 1fr;  /* Chuyển layout thành 1 cột */
+    gap: 40px;            /* Tăng khoảng cách giữa info và form */
+  }
+
+  .section-title {
+    font-size: 2rem;      /* Giảm cỡ chữ tiêu đề */
+  }
+
+  .info-item {
+    padding-bottom: 20px;  /* Giảm padding dưới */
+    margin-bottom: 20px;   /* Giảm margin dưới */
+  }
+
+  .form-group {
+    margin-bottom: 20px;   /* Giảm khoảng cách giữa các input */
+  }
+}
+
+/* Section chính */
+.welcome-section {
+  padding: 80px 0;  /* Padding trên dưới */
+  background-color: var(--light-bg);  /* Màu nền từ biến CSS */
+}
+
+/* Nội dung chính */
+.welcome-content {
+  text-align: center;  /* Căn giữa nội dung */
+}
+
+/* Tiêu đề section */
+.section-title {
+  font-size: 2.5rem;  /* Cỡ chữ */
+  color: var(--text-color);  /* Màu chữ */
+  margin-bottom: 20px;  /* Khoảng cách dưới */
+  font-weight: 700;  /* Độ đậm chữ */
+}
+
+/* Mô tả section */
+.section-description {
+  font-size: 1.2rem;  /* Cỡ chữ */
+  color: var(--secondary-color);  /* Màu chữ phụ */
+  max-width: 800px;  /* Chiều rộng tối đa */
+  margin: 0 auto 50px;  /* Margin trên dưới và căn giữa */
+  line-height: 1.6;  /* Khoảng cách dòng */
+}
+
+/* Grid các tính năng */
+.features-grid {
+  display: grid;  /* Grid layout */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));  /* Cột tự động */
+  gap: 30px;  /* Khoảng cách giữa các card */
+  margin-bottom: 50px;  /* Khoảng cách dưới */
+}
+
+/* Card tính năng */
+.feature-card {
+  background: white;  /* Nền trắng */
+  padding: 30px;  /* Padding đều */
+  border-radius: 10px;  /* Bo góc */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);  /* Đổ bóng */
+  transition: transform 0.3s ease;  /* Hiệu ứng */
+}
+
+/* Hiệu ứng hover cho card */
+.feature-card:hover {
+  transform: translateY(-5px);  /* Nâng card lên */
+}
+
+/* Icon trong card */
+.feature-card i {
+  font-size: 2.5rem;  /* Cỡ icon */
+  color: var(--primary-color);  /* Màu icon */
+  margin-bottom: 20px;  /* Khoảng cách dưới */
+}
+
+/* Tiêu đề trong card */
+.feature-card h3 {
+  font-size: 1.3rem;  /* Cỡ chữ */
+  color: var(--text-color);  /* Màu chữ */
+  margin-bottom: 15px;  /* Khoảng cách dưới */
+}
+
+/* Mô tả trong card */
+.feature-card p {
+  color: var(--secondary-color);  /* Màu chữ phụ */
+  line-height: 1.6;  /* Khoảng cách dòng */
+}
+
+/* Container cho CTA buttons */
+.welcome-cta {
+  display: flex;  /* Flexbox layout */
+  gap: 20px;  /* Khoảng cách giữa các nút */
+  justify-content: center;  /* Căn giữa */
+  margin-top: 40px;  /* Khoảng cách trên */
+}
+
+/* Style chung cho nút */
+.btn {
+  padding: 15px 30px;  /* Padding trong nút */
+  border-radius: 30px;  /* Bo tròn góc */
+  font-size: 1.1rem;  /* Cỡ chữ */
+  font-weight: 500;  /* Độ đậm chữ */
+  text-decoration: none;  /* Bỏ gạch chân */
+  transition: all 0.3s ease;  /* Hiệu ứng */
+  text-transform: uppercase;  /* Chữ hoa */
+  letter-spacing: 1px;  /* Khoảng cách chữ */
+}
+
+/* Nút primary */
+.btn-primary {
+  background-color: var(--primary-color);  /* Màu nền */
+  color: white;  /* Màu chữ */
+  border: none;  /* Bỏ viền */
+}
+
+/* Nút secondary */
+.btn-secondary {
+  background-color: transparent;  /* Nền trong suốt */
+  color: var(--primary-color);  /* Màu chữ */
+  border: 2px solid var(--primary-color);  /* Viền */
+}
+
+/* Hiệu ứng hover cho nút primary */
+.btn-primary:hover {
+  background-color: #0056b3;  /* Màu nền đậm hơn */
+  transform: translateY(-2px);  /* Nâng nút lên */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);  /* Đổ bóng */
+}
+
+/* Hiệu ứng hover cho nút secondary */
+.btn-secondary:hover {
+  background-color: var(--primary-color);  /* Màu nền */
+  color: white;  /* Màu chữ */
+  transform: translateY(-2px);  /* Nâng nút lên */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);  /* Đổ bóng */
+}
+
+/* Media queries cho responsive */
+@media (max-width: 768px) {
+  .welcome-section {
+    padding: 60px 0;  /* Giảm padding */
+  }
+
+  .section-title {
+    font-size: 2rem;  /* Giảm cỡ chữ */
+  }
+
+  .section-description {
+    font-size: 1.1rem;  /* Giảm cỡ chữ */
+    padding: 0 20px;  /* Thêm padding */
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;  /* 1 cột */
+    gap: 20px;  /* Giảm khoảng cách */
+  }
+
+  .welcome-cta {
+    flex-direction: column;  /* Chuyển layout thành dọc */
+    gap: 15px;  /* Giảm khoảng cách */
+  }
+
+  .btn {
+    width: 100%;  /* Chiều rộng 100% */
+    text-align: center;  /* Căn giữa text */
+  }
+} 

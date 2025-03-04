@@ -1,0 +1,208 @@
+/**
+ * Hero Section Styles
+ * Định nghĩa styles cho phần hero của trang chủ
+ */
+.hero-section {
+  position: relative;          /* Cho phép định vị các phần tử con tuyệt đối */
+  height: 100vh;              /* Chiều cao bằng 100% viewport */
+  min-height: 600px;          /* Chiều cao tối thiểu để đảm bảo hiển thị đẹp */
+  background: url('/assets/images/hero-bg.jpg') no-repeat center center;  /* Thiết lập ảnh nền */
+  background-size: cover;     /* Đảm bảo ảnh nền phủ kín container */
+  display: flex;              /* Sử dụng flexbox để căn giữa nội dung */
+  align-items: center;        /* Căn giữa nội dung theo chiều dọc */
+  color: white;              /* Màu chữ trắng cho toàn bộ section */
+}
+
+/* Lớp overlay - Tạo hiệu ứng gradient phủ lên background */
+.hero-overlay {
+  position: absolute;         /* Định vị tuyệt đối so với hero-section */
+  top: 0;                    /* Căn sát các cạnh của container cha */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,                  /* Góc của gradient */
+    rgba(0, 123, 255, 0.9) 0%,    /* Màu gradient bắt đầu với độ trong suốt */
+    rgba(0, 83, 255, 0.85) 100%   /* Màu gradient kết thúc */
+  );
+  display: flex;             /* Sử dụng flexbox để căn giữa nội dung */
+  align-items: center;       /* Căn giữa nội dung theo chiều dọc */
+}
+
+/* Container - Giới hạn chiều rộng nội dung */
+.container {
+  max-width: 1200px;         /* Chiều rộng tối đa của container */
+  margin: 0 auto;            /* Căn giữa container */
+  padding: 0 20px;           /* Tạo khoảng cách với mép màn hình */
+  position: relative;        /* Cho phép định vị các phần tử con */
+  z-index: 1;               /* Đặt container lên trên lớp overlay */
+}
+
+/* Hero Content - Phần nội dung chính */
+.hero-content {
+  max-width: 800px;          /* Giới hạn chiều rộng nội dung */
+  text-align: center;        /* Căn giữa text */
+  margin: 0 auto;            /* Căn giữa block */
+}
+
+/* Hero Title - Tiêu đề chính */
+.hero-title {
+  font-size: 3.5rem;         /* Kích thước chữ lớn */
+  font-weight: 700;          /* Độ đậm của chữ */
+  line-height: 1.2;          /* Khoảng cách giữa các dòng */
+  margin-bottom: 20px;       /* Khoảng cách với phần tử bên dưới */
+  animation: fadeInUp 0.5s ease-out;  /* Hiệu ứng fade in từ dưới lên */
+}
+
+/* Highlight - Phần được nhấn mạnh trong tiêu đề */
+.highlight {
+  display: block;            /* Hiển thị trên một dòng riêng */
+  color: var(--accent-color, #FFD700);  /* Màu nhấn mạnh */
+  font-size: 4rem;           /* Kích thước chữ lớn hơn */
+}
+
+/* Hero Description - Phần mô tả */
+.hero-description {
+  font-size: 1.2rem;         /* Kích thước chữ */
+  line-height: 1.6;          /* Khoảng cách giữa các dòng */
+  margin-bottom: 40px;       /* Khoảng cách với phần tử bên dưới */
+  opacity: 0.9;              /* Độ trong suốt nhẹ */
+  animation: fadeInUp 0.5s ease-out 0.2s both;  /* Hiệu ứng với delay */
+}
+
+/* Hero Buttons - Container cho các nút */
+.hero-buttons {
+  display: flex;             /* Sử dụng flexbox */
+  gap: 20px;                /* Khoảng cách giữa các nút */
+  justify-content: center;   /* Căn giữa các nút */
+  margin-bottom: 60px;       /* Khoảng cách với phần tử bên dưới */
+  animation: fadeInUp 0.5s ease-out 0.4s both;  /* Hiệu ứng với delay */
+}
+
+/* Button - Style chung cho các nút */
+.btn {
+  padding: 15px 35px;        /* Padding trong nút */
+  font-size: 1.1rem;         /* Kích thước chữ */
+  font-weight: 500;          /* Độ đậm của chữ */
+  border-radius: 30px;       /* Bo tròn góc */
+  text-decoration: none;     /* Bỏ gạch chân */
+  transition: all 0.3s ease; /* Hiệu ứng chuyển động mượt */
+}
+
+/* Primary Button - Nút chính */
+.btn-primary {
+  background-color: var(--primary-color, #007bff);  /* Màu nền */
+  color: white;              /* Màu chữ */
+  border: 2px solid var(--primary-color, #007bff);  /* Viền */
+}
+
+/* Hiệu ứng hover cho nút primary */
+.btn-primary:hover {
+  background-color: transparent;  /* Bỏ màu nền khi hover */
+  color: white;              /* Giữ màu chữ trắng */
+  transform: translateY(-2px);  /* Nâng nhẹ nút lên */
+}
+
+/* Outline Button - Nút phụ */
+.btn-outline {
+  background-color: transparent;  /* Nền trong suốt */
+  color: white;              /* Màu chữ trắng */
+  border: 2px solid white;   /* Viền trắng */
+}
+
+/* Hiệu ứng hover cho nút outline */
+.btn-outline:hover {
+  background-color: white;   /* Đổi nền thành trắng */
+  color: var(--primary-color, #007bff);  /* Đổi màu chữ */
+  transform: translateY(-2px);  /* Nâng nhẹ nút lên */
+}
+
+/* Hero Stats - Phần thống kê */
+.hero-stats {
+  display: flex;             /* Sử dụng flexbox */
+  justify-content: center;   /* Căn giữa các item */
+  gap: 60px;                /* Khoảng cách giữa các item */
+  animation: fadeInUp 0.5s ease-out 0.6s both;  /* Hiệu ứng với delay */
+}
+
+/* Stat Item - Từng mục thống kê */
+.stat-item {
+  text-align: center;        /* Căn giữa nội dung */
+}
+
+/* Stat Number - Số liệu thống kê */
+.stat-number {
+  display: block;            /* Hiển thị trên một dòng riêng */
+  font-size: 2.5rem;         /* Kích thước chữ lớn */
+  font-weight: 700;          /* Độ đậm của chữ */
+  color: var(--accent-color, #FFD700);  /* Màu nhấn mạnh */
+  margin-bottom: 5px;        /* Khoảng cách với label */
+}
+
+/* Stat Label - Nhãn thống kê */
+.stat-label {
+  font-size: 1rem;          /* Kích thước chữ */
+  opacity: 0.9;             /* Độ trong suốt nhẹ */
+}
+
+/* Animation - Hiệu ứng fade in từ dưới lên */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;             /* Bắt đầu với độ trong suốt hoàn toàn */
+    transform: translateY(20px);  /* Vị trí bắt đầu thấp hơn 20px */
+  }
+  to {
+    opacity: 1;             /* Kết thúc với độ trong suốt = 0 */
+    transform: translateY(0);  /* Trở về vị trí gốc */
+  }
+}
+
+/* Responsive cho mobile */
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 500px;      /* Giảm chiều cao tối thiểu */
+  }
+
+  .hero-title {
+    font-size: 2.5rem;      /* Giảm cỡ chữ tiêu đề */
+  }
+
+  .highlight {
+    font-size: 3rem;        /* Giảm cỡ chữ highlight */
+  }
+
+  .hero-description {
+    font-size: 1.1rem;      /* Giảm cỡ chữ mô tả */
+    padding: 0 20px;        /* Thêm padding hai bên */
+  }
+
+  .hero-buttons {
+    flex-direction: column;  /* Chuyển nút thành dọc */
+    gap: 15px;              /* Giảm khoảng cách giữa các nút */
+    padding: 0 20px;        /* Thêm padding hai bên */
+  }
+
+  .hero-stats {
+    flex-direction: column;  /* Chuyển stats thành dọc */
+    gap: 30px;              /* Tăng khoảng cách giữa các stats */
+  }
+
+  .stat-number {
+    font-size: 2rem;        /* Giảm cỡ chữ số liệu */
+  }
+}
+
+/* Responsive cho tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-title {
+    font-size: 3rem;        /* Điều chỉnh cỡ chữ tiêu đề */
+  }
+
+  .highlight {
+    font-size: 3.5rem;      /* Điều chỉnh cỡ chữ highlight */
+  }
+
+  .hero-stats {
+    gap: 40px;              /* Điều chỉnh khoảng cách giữa stats */
+  }
+} 

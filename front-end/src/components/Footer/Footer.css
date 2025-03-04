@@ -1,0 +1,214 @@
+.footer {
+  background-color: #f8f9fa;
+  color: #333;
+  padding-top: 4rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-about {
+  max-width: 350px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.footer-logo img {
+  height: 40px;
+  margin-right: 0.5rem;
+}
+
+.footer-logo span {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.footer-about p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #e9ecef;
+  color: #666;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background-color: #4A90E2;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.footer-links h3,
+.footer-courses h3,
+.footer-newsletter h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.footer-links ul,
+.footer-courses ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li,
+.footer-courses ul li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-links ul li a,
+.footer-courses ul li a {
+  color: #666;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover,
+.footer-courses ul li a:hover {
+  color: #4A90E2;
+  padding-left: 5px;
+}
+
+.footer-newsletter p {
+  color: #666;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.newsletter-form button {
+  padding: 0.8rem 1.5rem;
+  background-color: #4A90E2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  background-color: #357abd;
+}
+
+.footer-bottom {
+  border-top: 1px solid #dee2e6;
+  padding: 2rem 0;
+  margin-top: 2rem;
+}
+
+.footer-bottom .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-bottom p {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+}
+
+.footer-bottom-links a {
+  color: #666;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.footer-bottom-links a:hover {
+  color: #4A90E2;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-about {
+    max-width: 100%;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .footer-bottom .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-bottom-links {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
+
+/* Animation cho hover effects */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.social-links a:hover {
+  animation: float 0.3s ease-in-out;
+} 
