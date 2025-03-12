@@ -1,0 +1,134 @@
+/* PHẦN 1: LAYOUT CHÍNH */
+.all-courses-section {
+  padding: 40px 0;                /* Tạo khoảng cách trên dưới 40px */
+  background-color: #f5f7fa;      /* Màu nền xám nhạt */
+}
+
+/* PHẦN 2: BỘ LỌC KHÓA HỌC */
+.courses-filter {
+  display: flex;                      /* Sắp xếp các phần tử filter theo hàng ngang */
+  justify-content: flex-end;          /* Đẩy các filter về phía bên phải */
+  gap: 1rem;                         /* Khoảng cách giữa các filter là 1rem */
+  margin-bottom: 2rem;               /* Tạo khoảng cách với phần nội dung bên dưới */
+}
+
+.filter-select {
+  padding: 0.5rem 1rem;              /* Khoảng cách trong dropdown */
+  border: 1px solid #ddd;            /* Viền xám nhạt */
+  border-radius: 5px;                /* Bo góc */
+  font-size: 1rem;                   /* Cỡ chữ */
+  cursor: pointer;                   /* Con trỏ chuột kiểu bấm được */
+  background-color: white;           /* Nền trắng */
+}
+
+/* PHẦN 3: GRID HIỂN THỊ KHÓA HỌC */
+.courses-grid {
+  display: grid;                     /* Sử dụng CSS Grid */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));  /* Tự động chia cột, mỗi cột tối thiểu 300px */
+  gap: 30px;                        /* Khoảng cách giữa các card */
+  margin-top: 30px;                  /* Khoảng cách từ trên xuống */
+}
+
+/* PHẦN 4: THIẾT KẾ CARD KHÓA HỌC */
+.course-card {
+  background: #fff;                   /* Nền trắng */
+  border-radius: 8px;               /* Bo góc card */
+  overflow: hidden;                 /* Ẩn phần nội dung tràn ra ngoài */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);  /* Đổ bóng nhẹ */
+  transition: transform 0.3s ease;     /* Hiệu ứng hover mượt mà */
+}
+
+.course-card:hover {
+  transform: translateY(-5px);         /* Nâng card lên 5px khi di chuột qua */
+}
+
+/* PHẦN 5: HÌNH ẢNH KHÓA HỌC */
+.course-image {
+  position: relative;                 /* Để có thể định vị absolute cho level */
+  height: 200px;                      /* Chiều cao cố định cho ảnh */
+}
+
+.course-image img {
+  width: 100%;                        /* Ảnh rộng 100% container */
+  height: 100%;                         /* Chiều cao 100% container */
+  object-fit: cover;                    /* Đảm bảo ảnh không bị méo */
+}
+
+/* PHẦN 6: BADGE LEVEL */
+.course-level {
+  position: absolute;                 /* Định vị tuyệt đối */
+  top: 10px;                          /* Cách top 10px */
+  right: 10px;                        /* Cách phải 10px */
+  background: #2563eb;                /* Màu nền xanh */
+  color: white;                       /* Chữ màu trắng */
+  padding: 5px 10px;                  /* Padding trong badge */
+  border-radius: 4px;                   /* Bo góc badge */
+}
+
+/* PHẦN 7: NỘI DUNG CARD */
+.course-content {
+  padding: 20px;                        /* Padding nội dung */
+}
+
+.course-content h3 {
+  margin: 0 0 10px;                      /* Margin bottom 10px */
+  font-size: 20px;                        /* Kích thước chữ */
+  color: #333;                            /* Màu chữ */
+}
+
+.course-description {
+  color: #666;                             /* Màu chữ xám */
+  margin-bottom: 15px;                      /* Khoảng cách dưới */
+  line-height: 1.5;                            /* Chiều cao dòng */
+}
+
+/* PHẦN 8: FOOTER CARD */
+.course-footer {
+  display: flex;                           /* Sắp xếp giá và nút đăng ký theo hàng ngang */
+  justify-content: space-between;            /* Đẩy giá và nút về 2 phía */
+  align-items: center;                       /* Căn giữa theo chiều dọc */
+  padding-top: 1rem;                         /* Khoảng cách với nội dung trên */
+  border-top: 1px solid #eee;                  /* Đường kẻ phía trên */
+}
+
+/* PHẦN 9: GIÁ VÀ NÚT ĐĂNG KÝ */
+.course-price {
+  font-size: 1.2rem;                             /* Cỡ chữ giá */
+  font-weight: bold;                              /* Chữ đậm */
+  color: var(--primary-color);                      /* Màu chủ đạo */
+}
+
+.enroll-button {
+  padding: 0.8rem 1.5rem;                              /* Kích thước nút */
+  background-color: var(--primary-color);                 /* Màu nền nút */
+  color: white;                                          /* Chữ trắng */
+  border: none;                                          /* Không viền */
+  border-radius: 5px;                                      /* Bo góc nút */
+  cursor: pointer;                                           /* Con trỏ kiểu bấm được */
+  transition: all 0.3s ease;                                     /* Hiệu ứng mượt mà */
+}
+
+.enroll-button:hover {
+  background-color: #0056b3;                                 /* Đổi màu khi hover */
+  transform: translateY(-2px);                                      /* Nâng nút lên */
+}
+
+/* PHẦN 10: RESPONSIVE */
+@media (max-width: 768px) {
+  .courses-filter {
+    flex-direction: column;                                     /* Chuyển filter thành dạng cột */
+    align-items: stretch;                                         /* Kéo dãn các filter */
+  }
+
+  .filter-select {
+    width: 100%;                                                    /* Filter full width */
+  }
+
+  .courses-grid {
+    grid-template-columns: 1fr;                                         /* Chuyển grid thành 1 cột */
+  }
+
+  .course-card {
+    max-width: 100%;                                                   /* Card full width */
+  }
+}

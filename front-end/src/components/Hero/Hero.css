@@ -1,7 +1,7 @@
 /* Hero section styles */
 .hero {
   /* Thiết lập kích thước và vị trí */
-  height: auto; /* Đảm bảo chiều cao tự động */
+  height: 100vh;
   position: relative;
   display: flex;
   align-items: center;
@@ -9,7 +9,6 @@
   text-align: center;
   padding: 0 20px;
   overflow: hidden;
-  background-color: white; /* Đặt màu nền để kiểm tra */
 
   /* Background settings */
   background-image: url('../../assets/images/hero-bg.jpg');
@@ -126,16 +125,14 @@
 .hero-image img {
   max-width: 100%;
   height: auto;
-  object-fit: cover;
   animation: float 6s ease-in-out infinite;
 }
 
 .hero-wave {
   position: absolute;
-  bottom: -1px;        /* Đặt thấp hơn một chút để che lấp chân ảnh */
+  bottom: -9px;
   left: 0;
   width: 100%;
-  height: 50px;        /* Đặt chiều cao cụ thể cho SVG */
 }
 
 /* Animation cho hình ảnh hero */

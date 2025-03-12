@@ -1,0 +1,432 @@
+/* Thiết lập style cho container chính của trang */
+.course-overview {
+  padding: 40px 0;          /* Tạo khoảng cách trên dưới 40px */
+  background-color: #f8f9fa; /* Màu nền xám nhạt cho toàn trang */
+}
+
+/* Container giới hạn độ rộng tối đa và căn giữa nội dung */
+.container {
+  max-width: 1200px;        /* Giới hạn độ rộng tối đa 1200px */
+  margin: 0 auto;           /* Căn giữa container */
+  padding: 0 20px;          /* Tạo khoảng cách 20px hai bên */
+}
+
+/* Style cho tiêu đề chính của trang */
+.main-title {
+  text-align: center;       /* Căn giữa text */
+  font-size: 2.5rem;        /* Cỡ chữ lớn */
+  color: var(--primary-color); /* Sử dụng màu chủ đạo */
+  margin-bottom: 40px;      /* Tạo khoảng cách với phần dưới */
+}
+
+/* Style chung cho các section */
+.overview-section {
+  margin-bottom: 60px;      /* Tạo khoảng cách giữa các section */
+}
+
+/* Style cho tiêu đề của mỗi section */
+.overview-section h2 {
+  font-size: 2rem;          /* Cỡ chữ tiêu đề */
+  color: var(--primary-color); /* Màu chủ đạo */
+  margin-bottom: 30px;      /* Khoảng cách với nội dung bên dưới */
+  position: relative;       /* Để tạo gạch chân giả */
+  padding-bottom: 10px;     /* Khoảng cách cho gạch chân */
+}
+
+/* Tạo gạch chân cho tiêu đề section */
+.overview-section h2::after {
+  content: '';              /* Tạo pseudo-element */
+  position: absolute;       /* Định vị tuyệt đối */
+  bottom: 0;               /* Đặt ở dưới cùng */
+  left: 0;                 /* Đặt từ trái */
+  width: 60px;             /* Độ dài gạch chân */
+  height: 3px;             /* Độ dày gạch chân */
+  background-color: var(--primary-color); /* Màu gạch chân */
+}
+
+/* Box chứa nội dung của mỗi section */
+.content-box {
+  background: white;        /* Nền trắng */
+  border-radius: 15px;      /* Bo góc */
+  padding: 30px;           /* Khoảng cách nội dung với viền */
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+}
+
+/* Style cho text được highlight */
+.highlight-text {
+  font-size: 1.2rem;       /* Cỡ chữ lớn hơn bình thường */
+  color: var(--primary-color); /* Màu chủ đạo */
+  font-style: italic;      /* Chữ nghiêng */
+  margin-bottom: 20px;     /* Khoảng cách với phần dưới */
+  text-align: center;      /* Căn giữa */
+}
+
+/* Style cho phần đối tượng và lợi ích */
+.target-groups, .benefits {
+  margin-top: 30px;        /* Khoảng cách với phần trên */
+}
+
+/* Style cho text level trong target groups */
+.level {
+  color: var(--primary-color); /* Màu chủ đạo */
+  font-weight: bold;       /* Chữ đậm */
+}
+
+/* Style cho list items trong benefits */
+.benefits ul li {
+  margin: 10px 0;          /* Khoảng cách giữa các items */
+  padding-left: 25px;      /* Khoảng cách cho dấu check */
+  position: relative;      /* Để định vị dấu check */
+}
+
+/* Tạo dấu check cho benefits list */
+.benefits ul li::before {
+  content: '✓';           /* Thêm dấu check */
+  position: absolute;     /* Định vị tuyệt đối */
+  left: 0;               /* Đặt ở bên trái */
+  color: var(--primary-color); /* Màu chủ đạo */
+}
+
+/* Grid layout cho danh sách chapters */
+.chapter-list {
+  display: grid;           /* Sử dụng grid layout */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Tự động chia cột */
+  gap: 20px;              /* Khoảng cách giữa các cột */
+}
+
+/* Style cho từng chapter */
+.chapter {
+  padding: 20px;          /* Khoảng cách nội dung với viền */
+  background: #f8f9fa;    /* Màu nền xám nhạt */
+  border-radius: 10px;    /* Bo góc */
+  transition: transform 0.3s ease; /* Hiệu ứng hover mượt */
+}
+
+/* Hiệu ứng hover cho chapter */
+.chapter:hover {
+  transform: translateY(-5px); /* Nâng lên khi hover */
+}
+
+/* Grid layout cho learning format */
+.learning-format ul {
+  display: grid;          /* Sử dụng grid */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Tự động chia cột */
+  gap: 15px;             /* Khoảng cách giữa các items */
+}
+
+/* Style cho icons trong learning format */
+.learning-format i {
+  color: var(--primary-color); /* Màu chủ đạo cho icon */
+  margin-right: 10px;    /* Khoảng cách với text */
+}
+
+/* Style cho phần certification */
+.certification {
+  text-align: center;     /* Căn giữa nội dung */
+  margin: 30px 0;        /* Khoảng cách trên dưới */
+}
+
+/* Layout cho thông tin chứng chỉ */
+.cert-info {
+  display: flex;         /* Sử dụng flexbox */
+  align-items: center;   /* Căn giữa theo chiều dọc */
+  gap: 20px;            /* Khoảng cách giữa icon và text */
+}
+
+/* Style cho icon chứng chỉ */
+.cert-info i {
+  font-size: 3rem;      /* Cỡ icon lớn */
+  color: var(--primary-color); /* Màu chủ đạo */
+}
+
+/* Grid layout cho profiles giảng viên */
+.instructor-profiles {
+  display: grid;         /* Sử dụng grid */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Tự động chia cột */
+  gap: 30px;            /* Khoảng cách giữa các profiles */
+}
+
+/* Style cho từng instructor */
+.instructor {
+  text-align: center;    /* Căn giữa nội dung */
+  padding: 20px;        /* Khoảng cách với viền */
+  background: #f8f9fa;  /* Màu nền xám nhạt */
+  border-radius: 10px;  /* Bo góc */
+}
+
+/* Grid layout cho pricing plans */
+.pricing-plans {
+  display: grid;        /* Sử dụng grid */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Tự động chia cột */
+  gap: 30px;           /* Khoảng cách giữa các plans */
+  margin-bottom: 30px; /* Khoảng cách với phần dưới */
+}
+
+/* Layout cho buttons CTA */
+.cta-buttons {
+  display: flex;        /* Sử dụng flexbox */
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  gap: 20px;           /* Khoảng cách giữa các nút */
+  margin-top: 30px;    /* Khoảng cách với phần trên */
+}
+
+/* Style chung cho các nút */
+.btn-register, .btn-contact {
+  padding: 15px 30px;   /* Kích thước nút */
+  border-radius: 25px;  /* Bo tròn góc */
+  text-decoration: none; /* Bỏ gạch chân */
+  font-weight: bold;    /* Chữ đậm */
+  transition: transform 0.3s ease; /* Hiệu ứng hover */
+}
+
+/* Style cho nút đăng ký */
+.btn-register {
+  background: var(--primary-color); /* Màu nền chủ đạo */
+  color: white;        /* Chữ trắng */
+}
+
+/* Style cho nút liên hệ */
+.btn-contact {
+  background: white;   /* Nền trắng */
+  color: var(--primary-color); /* Chữ màu chủ đạo */
+  border: 2px solid var(--primary-color); /* Viền màu chủ đạo */
+}
+
+/* Hiệu ứng hover cho các nút */
+.btn-register:hover, .btn-contact:hover {
+  transform: translateY(-3px); /* Nâng lên khi hover */
+}
+
+/* Responsive design cho màn hình nhỏ */
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 2rem;    /* Giảm cỡ chữ tiêu đề */
+  }
+
+  .overview-section h2 {
+    font-size: 1.5rem;  /* Giảm cỡ chữ tiêu đề section */
+  }
+
+  .content-box {
+    padding: 20px;      /* Giảm padding */
+  }
+
+  .pricing-plans, .instructor-profiles {
+    grid-template-columns: 1fr; /* Chuyển về 1 cột */
+  }
+
+  .cta-buttons {
+    flex-direction: column; /* Xếp các nút theo chiều dọc */
+  }
+}
+
+/* Thiết lập style cho section Kết quả đạt được */
+.outcomes {
+  background-color: #f8f9fa;    /* Màu nền xám nhạt cho toàn section */
+  padding: 60px 0;              /* Tạo khoảng cách 60px trên và dưới */
+}
+
+/* Thiết lập grid layout cho container chính */
+.outcomes-grid {
+  display: grid;                /* Sử dụng CSS Grid để chia layout */
+  grid-template-columns: 1fr;   /* Ban đầu chỉ 1 cột cho mobile */
+  gap: 30px;                    /* Khoảng cách 30px giữa các items */
+}
+
+/* Style chung cho các card trong section */
+.outcome-card {
+  background: white;            /* Nền trắng cho card */
+  border-radius: 15px;          /* Bo tròn góc 15px */
+  padding: 30px;                /* Khoảng cách bên trong card */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);  /* Đổ bóng nhẹ */
+  transition: transform 0.3s ease;  /* Hiệu ứng chuyển động mượt */
+}
+
+/* Hiệu ứng khi hover vào card */
+.outcome-card:hover {
+  transform: translateY(-5px);   /* Card nâng lên 5px khi hover */
+}
+
+/* Style cho phần header của mỗi card */
+.outcome-header {
+  display: flex;                /* Sử dụng flexbox để sắp xếp nội dung */
+  align-items: center;          /* Căn giữa các phần tử theo chiều dọc */
+  margin-bottom: 25px;          /* Khoảng cách với phần nội dung bên dưới */
+  padding-bottom: 15px;         /* Khoảng cách trước border bottom */
+  border-bottom: 2px solid #eef2f7;  /* Đường kẻ phân cách */
+}
+
+/* Style cho icon trong header */
+.outcome-header i {
+  font-size: 24px;              /* Kích thước icon */
+  color: var(--primary-color);  /* Màu chủ đạo cho icon */
+  margin-right: 15px;           /* Khoảng cách với text */
+}
+
+/* Style cho tiêu đề trong header */
+.outcome-header h3 {
+  font-size: 1.5rem;            /* Cỡ chữ tiêu đề */
+  color: #2d3748;               /* Màu chữ đậm */
+  margin: 0;                    /* Xóa margin mặc định */
+}
+
+/* Style cho danh sách kỹ năng */
+.outcome-list {
+  list-style: none;             /* Bỏ dấu chấm mặc định của list */
+  padding: 0;                   /* Xóa padding mặc định */
+  margin: 0;                    /* Xóa margin mặc định */
+}
+
+/* Style cho từng item trong danh sách */
+.outcome-list li {
+  display: flex;                /* Sử dụng flexbox */
+  align-items: center;          /* Căn giữa nội dung */
+  margin-bottom: 15px;          /* Khoảng cách giữa các items */
+  padding: 10px;                /* Padding bên trong item */
+  background: #f8f9fa;          /* Màu nền xám nhạt */
+  border-radius: 8px;           /* Bo góc nhẹ */
+  transition: background-color 0.3s ease;  /* Hiệu ứng đổi màu */
+}
+
+/* Hiệu ứng hover cho items */
+.outcome-list li:hover {
+  background: #eef2f7;          /* Đổi màu nền khi hover */
+}
+
+/* Style cho icon trong list items */
+.outcome-list i {
+  color: #48bb78;               /* Màu xanh lá cho icon check */
+  margin-right: 12px;           /* Khoảng cách với text */
+  font-size: 18px;              /* Kích thước icon */
+}
+
+/* Layout cho phần chứng chỉ */
+.cert-content {
+  display: flex;                /* Sử dụng flexbox */
+  align-items: center;          /* Căn giữa theo chiều dọc */
+  gap: 20px;                    /* Khoảng cách giữa các phần tử */
+}
+
+/* Style cho phần icon chứng chỉ */
+.cert-icon {
+  flex-shrink: 0;               /* Ngăn icon co lại */
+  width: 100px;                 /* Chiều rộng cố định */
+  height: 100px;                /* Chiều cao cố định */
+}
+
+/* Style cho ảnh trong icon */
+.cert-icon img {
+  width: 100%;                  /* Chiều rộng full container */
+  height: 100%;                 /* Chiều cao full container */
+  object-fit: contain;          /* Giữ tỷ lệ ảnh */
+}
+
+/* Style cho phần thông tin chứng chỉ */
+.cert-details {
+  flex-grow: 1;                 /* Cho phép phần này mở rộng */
+}
+
+/* Style cho tiêu đề chứng chỉ */
+.cert-title {
+  font-size: 1.2rem;            /* Cỡ chữ tiêu đề */
+  color: #2d3748;               /* Màu chữ đậm */
+  margin-bottom: 10px;          /* Khoảng cách với phần dưới */
+}
+
+/* Style cho dòng công nhận */
+.cert-recognition {
+  color: #718096;               /* Màu chữ nhạt hơn */
+  margin-bottom: 15px;          /* Khoảng cách với phần dưới */
+}
+
+/* Style cho danh sách lợi ích */
+.cert-benefits {
+  list-style: none;             /* Bỏ dấu chấm mặc định */
+  padding: 0;                   /* Xóa padding mặc định */
+}
+
+/* Style cho từng lợi ích */
+.cert-benefits li {
+  margin-bottom: 8px;           /* Khoảng cách giữa các items */
+  padding-left: 20px;           /* Khoảng cách cho dấu chấm */
+  position: relative;           /* Để định vị dấu chấm */
+}
+
+/* Tạo dấu chấm tròn trước mỗi lợi ích */
+.cert-benefits li::before {
+  content: '•';                 /* Thêm dấu chấm */
+  color: var(--primary-color);  /* Màu chủ đạo */
+  position: absolute;           /* Định vị tuyệt đối */
+  left: 0;                      /* Đặt ở bên trái */
+}
+
+/* Grid layout cho phần ứng dụng */
+.applications-grid {
+  display: grid;                /* Sử dụng CSS Grid */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));  /* Tự động chia cột */
+  gap: 20px;                    /* Khoảng cách giữa các items */
+}
+
+/* Style cho từng item ứng dụng */
+.application-item {
+  text-align: center;           /* Căn giữa nội dung */
+  padding: 20px;                /* Khoảng cách bên trong */
+  background: #f8f9fa;          /* Màu nền xám nhạt */
+  border-radius: 10px;          /* Bo góc */
+  transition: all 0.3s ease;    /* Hiệu ứng mượt */
+}
+
+/* Hiệu ứng hover cho items */
+.application-item:hover {
+  background: #eef2f7;          /* Đổi màu nền */
+  transform: translateY(-3px);   /* Nâng lên khi hover */
+}
+
+/* Style cho icon trong items */
+.application-item i {
+  font-size: 30px;              /* Kích thước icon */
+  color: var(--primary-color);  /* Màu chủ đạo */
+  margin-bottom: 15px;          /* Khoảng cách với text */
+}
+
+/* Style cho tiêu đề item */
+.application-item h4 {
+  color: #2d3748;               /* Màu chữ đậm */
+  margin-bottom: 10px;          /* Khoảng cách với description */
+}
+
+/* Style cho mô tả item */
+.application-item p {
+  color: #718096;               /* Màu chữ nhạt */
+  font-size: 0.9rem;            /* Cỡ chữ nhỏ hơn */
+}
+
+/* Responsive cho tablet */
+@media (min-width: 768px) {
+  .outcomes-grid {
+    grid-template-columns: repeat(2, 1fr);  /* Chia 2 cột */
+  }
+  
+  .outcome-card.applications {
+    grid-column: 1 / -1;        /* Chiếm full width */
+  }
+}
+
+/* Responsive cho desktop */
+@media (min-width: 1024px) {
+  .outcomes-grid {
+    grid-template-columns: repeat(3, 1fr);  /* Chia 3 cột */
+  }
+}
+
+/* Responsive cho mobile */
+@media (max-width: 767px) {
+  .applications-grid {
+    grid-template-columns: repeat(2, 1fr);  /* Chia 2 cột cho ứng dụng */
+  }
+  
+  .cert-content {
+    flex-direction: column;      /* Xếp dọc các phần tử */
+    text-align: center;          /* Căn giữa text */
+  }
+}

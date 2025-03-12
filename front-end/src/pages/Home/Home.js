@@ -6,7 +6,6 @@ import Hero from '../../components/Hero/Hero';
 import Welcome from '../../components/Home/Welcome';
 import ParentTestimonials from '../../components/Home/ParentTestimonials';
 import FeaturedCourses from '../../components/Home/FeaturedCourses';
-import ContactSection from '../../components/Home/ContactSection';
 
 const Home = () => {
   return (
@@ -24,7 +23,6 @@ const Home = () => {
       <FeaturedCourses />
 
       {/* Contact Section - Liên hệ */}
-      <ContactSection />
     </div>
   );
 };

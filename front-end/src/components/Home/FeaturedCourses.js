@@ -19,7 +19,7 @@ const FeaturedCourses = () => {
       id: 1,
       title: "Scratch Jr cho bé",
       description: "Khóa học lập trình căn bản dành cho trẻ từ 5-7 tuổi, giúp phát triển tư duy logic từ sớm",
-      image: "/assets/images/course-scratch.jpg",
+      image: "../../assets/images/course-scratch.jpg",
       price: "2,500,000đ",
       duration: "8 tuần",
       level: "Cơ bản"

@@ -4,29 +4,31 @@ import './App.css';
 
 // Layout Components
 import Navbar from './components/Navbar/Navbar';
-import Footer from './components/Footer/Footer';
+import Footer from '../../front-end/src/components/Footer/Footer'
 
 // Page Components
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Courses from './pages/Courses/Courses';
-import Programs from './pages/Programs/Programs';
 import Resources from './pages/Resources/Resources';
-import Recruitment from './pages/Recruitment/Recruitment';
 import Privacy from './pages/Privacy/Privacy';
 import Contact from './components/Home/Contact';
+import Sample from './components/Sample/Sample';
 
 // Course Related Components
-import CourseDetail from './components/Courses/CourseDetail';
-import CourseOverview from './components/Courses/CourseOverview';
-import CourseRegistration from './components/Courses/CourseRegistration';
+import CourseDetail from '../../front-end/src/components/Courses/CourseDetail/CourseDetail';
+import CourseOverview from '../../front-end/src/components/Courses/Overview/CourseOverview';
+import CourseRegistration from '../../front-end/src/components/Courses/Registration/CourseRegistration';
+import AllCourses from '../../front-end/src/components/Courses/AllCourses/AllCourses';
 
 // Program Related Components
-import SpecialProgram from './components/Programs/SpecialProgram';
-import Events from './components/Programs/Events';
-import ProgramRegistration from './components/Programs/ProgramRegistration';
+import CourseProgram from '../../front-end/src/components/Courses/Program/CourseProgram'
 
-function App() {
+// Login, Register Components
+import Login from './components/Auth/Login';
+import Register from './components/Auth/Register';
+
+const App = () => {
   return (
     <Router>
       <div className="app">
@@ -34,24 +36,24 @@ function App() {
         <main className="main-content">
           <Routes>
             {/* Main Pages */}
+            <Route path="/sample" element={<Sample />} />
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/courses" element={<Courses />} />
-            <Route path="/programs" element={<Programs />} />
             <Route path="/resources" element={<Resources />} />
-            <Route path="/recruitment" element={<Recruitment />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/login" element={<Login />} />\
+            <Route path= "/register" element={<Register />} />
 
             {/* Course Routes */}
             <Route path="/courses/overview" element={<CourseOverview />} />
+            <Route path="/courses/all" element={<AllCourses />} />
             <Route path="/course/:id" element={<CourseDetail />} />
             <Route path="/courses/register" element={<CourseRegistration />} />
 
             {/* Program Routes */}
-            <Route path="/programs/special" element={<SpecialProgram />} />
-            <Route path="/programs/events" element={<Events />} />
-            <Route path="/programs/register" element={<ProgramRegistration />} />
+            <Route path="/program" element={<CourseProgram/>} />
 
             {/* About Sub-pages */}
             <Route path="/about/mission" element={<About section="mission" />} />
@@ -69,6 +71,6 @@ function App() {
       </div>
     </Router>
   );
-}
+};
 
 export default App; 

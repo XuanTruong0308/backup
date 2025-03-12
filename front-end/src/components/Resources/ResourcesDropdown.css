@@ -1,0 +1,121 @@
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-trigger {
+  color: white;
+  cursor: pointer;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Style cho dropdown menu */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  min-width: 220px;
+  border-radius: 8px;
+  padding: 8px 0;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.2s ease;
+  z-index: 1001;
+}
+
+/* Hiển thị menu khi hover vào dropdown */
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(5px);
+}
+
+/* Style cho hover trigger */
+.dropdown:hover .dropdown-trigger {
+  color: #ffd700;
+}
+
+/* Style cho từng item trong dropdown */
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+/* Icon cho mỗi item (nếu có) */
+.dropdown-item i {
+  width: 20px;
+  color: #4070f4;
+}
+
+/* Hiệu ứng hover tinh tế */
+.dropdown-item:hover {
+  background: #f8f9fa;
+  color: #4070f4;
+  padding-left: 25px;
+}
+
+/* Thêm đường kẻ phân cách nhẹ nhàng */
+.dropdown-item:not(:last-child) {
+  border-bottom: 1px solid #f1f1f1;
+}
+
+/* Animation khi hiển thị */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive styles */
+@media screen and (max-width: 960px) {
+  .dropdown {
+    width: 100%;
+  }
+  
+  .dropdown-trigger {
+    justify-content: center;
+  }
+
+  .dropdown-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    background: transparent;
+    padding: 0;
+    margin-top: 5px;
+  }
+
+  .dropdown-item {
+    color: white;
+    padding: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .dropdown-item:hover {
+    background: rgba(255,255,255,0.05);
+    color: #ffd700;
+  }
+
+  .dropdown-item i {
+    color: white;
+  }
+}

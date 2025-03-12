@@ -1,563 +1,189 @@
-/* Contact Section - Phần liên hệ */
+/* Reset CSS - Xóa bỏ các thiết lập mặc định của trình duyệt để đảm bảo giao diện nhất quán */
+* {
+  margin: 0; /* Xóa margin mặc định để tránh khoảng cách không mong muốn */
+  padding: 0; /* Xóa padding mặc định để tránh sai lệch layout */
+  box-sizing: border-box; /* Đảm bảo width và height bao gồm cả padding và border */
+}
+
+/* Định nghĩa biến CSS dùng chung để dễ dàng thay đổi theme */
+:root {
+  --primary: #4070f4; /* Màu chủ đạo - xanh dương */
+  --primary-dark: #3060e0; /* Màu chủ đạo tối hơn - dùng cho hiệu ứng hover */
+  --secondary: #64748b; /* Màu phụ - dùng cho text */
+  --white: #ffffff; /* Màu trắng - dùng cho nền và chữ */
+  --bg-light: #f8fafc; /* Màu nền nhẹ - tạo cảm giác thoải mái */
+  --text-dark: #1e293b; /* Màu chữ đậm - dùng cho tiêu đề */
+  --text-light: #64748b; /* Màu chữ nhạt - dùng cho mô tả */
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ - tạo chiều sâu */
+  --transition: all 0.3s ease; /* Hiệu ứng chuyển động mượt mà */
+  --radius: 16px; /* Độ bo góc chung cho các phần tử */
+}
+
+/* Container chính */
+.contact-section {
+  padding: 60px 0;
+  background: #f8fafc;
+}
+
+/* Header */
+.contact-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.contact-header h1 {
+  font-size: 2.5rem;
+  color: #2d3748;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.header-line {
+  width: 80px;
+  height: 4px;
+  background: var(--primary);
+  margin: 0 auto 20px;
+  border-radius: 2px;
+}
+
+/* Grid container */
 .contact-container {
-  max-width: 1200px;          /* Giới hạn chiều rộng tối đa */
-  margin: 40px auto;          /* Căn giữa và tạo khoảng cách với lề */
-  padding: 0 20px;            /* Khoảng cách với mép màn hình */
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 40px;
+  padding: 0 20px;
 }
 
-.contact-title {
-  text-align: center;         /* Căn giữa tiêu đề */
-  color: #333;                /* Màu chữ chính */
-  margin-bottom: 10px;       /* Khoảng cách dưới */
-  font-size: 2.5rem;          /* Kích thước chữ lớn hơn */
+/* Card styles */
+.info-card, .form-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  padding: 40px;
 }
 
-.contact-subtitle {
-  text-align: center;         /* Căn giữa subtitle */
-  color: #666;                /* Màu chữ phụ */
-  margin-bottom: 40px;       /* Khoảng cách dưới */
-  font-size: 1.2rem;          /* Kích thước chữ */
-}
-
-.contact-content {
-  display: flex;              /* Sử dụng Flexbox */
-  gap: 40px;                 /* Khoảng cách giữa thông tin và form */
-  margin-top: 30px;          /* Khoảng cách trên */
-}
-
-/* Phần thông tin liên hệ */
-.contact-info {
-  flex: 1;                   /* Chiếm 1 phần trong flex */
-  background: #f8f9fa;      /* Nền nhẹ */
-  padding: 30px;            /* Padding đều */
-  border-radius: 10px;      /* Bo tròn góc */
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+/* Info items */
+.info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
 .info-item {
-  display: flex;             /* Sử dụng flexbox */
-  align-items: center;       /* Căn giữa các phần tử */
-  margin-bottom: 25px;       /* Khoảng cách giữa các mục */
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background: #f8fafc;
+  border-radius: 15px;
+  transition: all 0.3s ease;
 }
 
-.info-item i {
-  font-size: 24px;           /* Kích thước icon lớn hơn */
-  color: #007bff;            /* Màu icon */
-  margin-right: 15px;        /* Khoảng cách với nội dung */
+.icon-circle {
+  width: 50px;
+  height: 50px;
+  background: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
 }
 
-.info-details h3 {
-  margin: 0 0 5px 0;        /* Khoảng cách dưới */
-  font-size: 18px;           /* Kích thước tiêu đề */
-  color: #333;               /* Màu chữ */
+.info-content h4 {
+  color: #2d3748;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  font-weight: 600;
 }
 
-.info-details p {
-  margin: 0;                 /* Bỏ margin */
-  color: #666;               /* Màu chữ phụ */
-  font-size: 16px;           /* Kích thước chữ */
+.info-content p {
+  color: #64748b;
+  font-size: 1rem;
 }
 
-/* Phần form liên hệ */
-.contact-form {
-  background: white;        /* Nền trắng */
-  padding: 40px;           /* Padding lớn */
-  border-radius: 10px;     /* Bo tròn góc */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);  /* Đổ bóng nhẹ */
-  display: flex;           /* Sử dụng Flexbox để căn chỉnh */
-  flex-direction: column;  /* Sắp xếp các phần tử theo cột */
-  gap: 20px;               /* Khoảng cách giữa các phần tử trong form */
+/* Social links */
+.social-links {
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
 }
 
-.form-group {
-  width: 100%;             /* Chiều rộng 100% cho các nhóm input */
+.social-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
 }
 
-.form-group label {
-  display: block;            /* Hiển thị trên một dòng riêng */
-  margin-bottom: 8px;       /* Khoảng cách với input */
-  color: #333;               /* Màu chữ */
-  font-weight: 500;          /* Độ đậm chữ */
+/* Form styles */
+.form-card h3 {
+  color: #2d3748;
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  font-weight: 600;
 }
 
-.required {
-  color: #dc3545;            /* Màu đỏ cho trường bắt buộc */
+.input-group {
+  margin-bottom: 25px;
 }
 
-.form-group input,
-.form-group textarea {
-  width: 100%;               /* Chiều rộng 100% */
-  padding: 12px;             /* Padding trong */
-  border: 1px solid #ddd;    /* Viền nhẹ */
-  border-radius: 5px;        /* Bo tròn góc */
-  font-size: 16px;           /* Kích thước chữ */
-  transition: border-color 0.3s ease; /* Hiệu ứng chuyển màu viền */
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
-  border-color: #007bff;     /* Đổi màu viền khi focus */
-  outline: none;              /* Bỏ outline mặc định */
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1); /* Thêm shadow */
+.input-group input:focus,
+.input-group textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
 }
 
-/* Nút submit */
-.submit-button {
-  width: 100%;               /* Chiều rộng 100% */
-  padding: 12px;             /* Padding lớn */
-  background: #007bff;       /* Màu nền */
-  color: white;              /* Màu chữ */
-  border: none;              /* Bỏ viền */
-  border-radius: 5px;        /* Bo tròn góc */
-  font-size: 16px;           /* Kích thước chữ */
-  font-weight: 500;          /* Độ đậm chữ */
-  cursor: pointer;           /* Con trỏ pointer */
-  transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu */
-  align-self: flex-end;    /* Căn nút submit về phía bên phải */
+.submit-btn {
+  width: 100%;
+  padding: 15px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.submit-button:hover {
-  background: #0056b3;       /* Màu nền đậm hơn khi hover */
-}
-
-/* Thông báo */
-.notification {
-  margin-top: 20px;          /* Khoảng cách với form */
-  padding: 15px;             /* Padding đều */
-  border-radius: 5px;        /* Bo tròn góc */
-  text-align: center;        /* Căn giữa text */
-  animation: fadeIn 0.3s;    /* Hiệu ứng hiện */
-}
-
-/* Success notification */
-.notification.success {
-  background-color: #d4edda; /* Màu nền xanh nhạt */
-  color: #155724;             /* Màu chữ xanh đậm */
-  border: 1px solid #c3e6cb;  /* Viền xanh nhạt */
-}
-
-/* Error notification */
-.notification.error {
-  background-color: #f8d7da; /* Màu nền đỏ nhạt */
-  color: #721c24;             /* Màu chữ đỏ đậm */
-  border: 1px solid #f5c6cb;  /* Viền đỏ nhạt */
-}
-
-/* Animation cho notification */
-@keyframes fadeIn {
-  from {
-    opacity: 0;               /* Bắt đầu trong suốt */
-    transform: translateY(-10px); /* Vị trí bắt đầu cao hơn */
-  }
-  to {
-    opacity: 1;               /* Kết thúc hiện rõ */
-    transform: translateY(0); /* Trở về vị trí gốc */
-  }
+.submit-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .contact-content {
-    flex-direction: column;    /* Chuyển layout thành dọc */
+  .contact-container {
+    grid-template-columns: 1fr;
   }
-
-  .contact-info,
-  .contact-form {
-    width: 100%;               /* Chiều rộng 100% */
+  
+  .contact-header h1 {
+    font-size: 2rem;
   }
-
-  .info-item {
-    margin-bottom: 20px;       /* Giảm khoảng cách giữa các mục */
-  }
-
-  .social-links {
-    justify-content: center;    /* Căn giữa các icon mạng xã hội */
+  
+  .info-card, .form-card {
+    padding: 30px;
   }
 }
-
-/* Contact Section - Phần liên hệ */
-.contact-section {
-  padding: 100px 0;          /* Khoảng cách trên dưới lớn */
-  background-color: var(--light-bg, #f8f9fa);  /* Màu nền nhẹ */
-}
-
-/* Container - Giới hạn chiều rộng nội dung */
-.container {
-  max-width: 1200px;         /* Chiều rộng tối đa */
-  margin: 0 auto;            /* Căn giữa container */
-  padding: 0 20px;           /* Khoảng cách với mép màn hình */
-}
-
-/* Section Header - Phần tiêu đề */
-.section-header {
-  text-align: center;        /* Căn giữa nội dung */
-  margin-bottom: 60px;       /* Khoảng cách với nội dung bên dưới */
-}
-
-/* Section Title - Tiêu đề chính */
-.section-title {
-  font-size: 2.5rem;         /* Kích thước chữ lớn */
-  color: var(--text-color, #333);  /* Màu chữ chính */
-  margin-bottom: 15px;       /* Khoảng cách với subtitle */
-}
-
-/* Section Subtitle - Tiêu đề phụ */
-.section-subtitle {
-  font-size: 1.1rem;         /* Kích thước chữ */
-  color: var(--secondary-color, #666);  /* Màu chữ phụ */
-  max-width: 600px;          /* Giới hạn chiều rộng */
-  margin: 0 auto;            /* Căn giữa */
-}
-
-/* Contact Content - Layout chính */
-.contact-content {
-  display: grid;             /* Sử dụng CSS Grid */
-  grid-template-columns: 1fr 2fr;  /* Tỷ lệ cột 1:2 */
-  gap: 50px;                /* Khoảng cách giữa info và form */
-  align-items: start;       /* Căn đầu các phần tử */
-}
-
-/* Contact Info - Phần thông tin liên hệ */
-.contact-info {
-  background: white;         /* Nền trắng */
-  padding: 30px;            /* Padding đều */
-  border-radius: 10px;      /* Bo tròn góc */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);  /* Đổ bóng nhẹ */
-}
-
-/* Info Item - Từng mục thông tin */
-.info-item {
-  display: flex;            /* Sử dụng flexbox */
-  align-items: flex-start;  /* Căn đầu các phần tử */
-  margin-bottom: 25px;      /* Khoảng cách giữa các mục */
-  padding-bottom: 25px;     /* Padding dưới */
-  border-bottom: 1px solid #eee;  /* Đường kẻ phân cách */
-}
-
-/* Icon trong info item */
-.info-item i {
-  font-size: 1.5rem;        /* Kích thước icon */
-  color: var(--primary-color, #007bff);  /* Màu icon */
-  margin-right: 15px;       /* Khoảng cách với nội dung */
-  margin-top: 5px;          /* Dịch xuống một chút */
-}
-
-/* Info Details - Phần nội dung thông tin */
-.info-details h4 {
-  font-size: 1.1rem;        /* Kích thước tiêu đề */
-  color: var(--text-color, #333);  /* Màu chữ */
-  margin-bottom: 5px;       /* Khoảng cách với đoạn text */
-}
-
-/* Đoạn text trong info */
-.info-details p {
-  color: var(--secondary-color, #666);  /* Màu chữ phụ */
-  font-size: 1rem;          /* Kích thước chữ */
-  line-height: 1.6;         /* Khoảng cách dòng */
-}
-
-/* Contact Form - Phần form liên hệ */
-.contact-form {
-  background: white;        /* Nền trắng */
-  padding: 40px;           /* Padding lớn */
-  border-radius: 10px;     /* Bo tròn góc */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);  /* Đổ bóng nhẹ */
-  display: flex;           /* Sử dụng Flexbox để căn chỉnh */
-  flex-direction: column;  /* Sắp xếp các phần tử theo cột */
-  gap: 20px;               /* Khoảng cách giữa các phần tử trong form */
-}
-
-/* Form Group - Nhóm input */
-.form-group {
-  width: 100%;             /* Chiều rộng 100% cho các nhóm input */
-}
-
-/* Label trong form */
-.form-group label {
-  display: block;          /* Hiển thị trên một dòng riêng */
-  font-size: 1rem;         /* Kích thước chữ */
-  color: var(--text-color, #333);  /* Màu chữ */
-  margin-bottom: 8px;      /* Khoảng cách với input */
-}
-
-/* Input và Textarea */
-.form-group input,
-.form-group textarea {
-  width: 100%;             /* Chiều rộng 100% */
-  padding: 12px 15px;      /* Padding trong */
-  border: 1px solid #ddd;  /* Viền nhẹ */
-  border-radius: 5px;      /* Bo tròn góc */
-  font-size: 1rem;         /* Kích thước chữ */
-  transition: all 0.3s;    /* Hiệu ứng chuyển động */
-}
-
-/* Focus state cho input và textarea */
-.form-group input:focus,
-.form-group textarea:focus {
-  border-color: var(--primary-color, #007bff);  /* Đổi màu viền */
-  outline: none;           /* Bỏ outline mặc định */
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);  /* Thêm shadow */
-}
-
-/* Nút submit */
-.btn-primary {
-  width: 100%;             /* Chiều rộng 100% */
-  padding: 15px;           /* Padding lớn */
-  background: var(--primary-color, #007bff);  /* Màu nền */
-  color: white;            /* Màu chữ */
-  border: none;            /* Bỏ viền */
-  border-radius: 5px;      /* Bo tròn góc */
-  font-size: 1.1rem;       /* Kích thước chữ */
-  cursor: pointer;         /* Con trỏ pointer */
-  transition: all 0.3s;    /* Hiệu ứng chuyển động */
-}
-
-/* Hover state cho nút */
-.btn-primary:hover {
-  background-color: var(--primary-dark, #0056b3);  /* Màu nền đậm hơn */
-  transform: translateY(-2px);  /* Nâng nhẹ nút lên */
-}
-
-/* Notification - Thông báo */
-.notification {
-  margin-top: 20px;        /* Khoảng cách với form */
-  padding: 15px;           /* Padding đều */
-  border-radius: 5px;      /* Bo tròn góc */
-  text-align: center;      /* Căn giữa text */
-  animation: fadeIn 0.3s;  /* Hiệu ứng hiện */
-}
-
-/* Success notification */
-.notification.success {
-  background-color: #d4edda;  /* Màu nền xanh nhạt */
-  color: #155724;             /* Màu chữ xanh đậm */
-  border: 1px solid #c3e6cb;  /* Viền xanh nhạt */
-}
-
-/* Error notification */
-.notification.error {
-  background-color: #f8d7da;  /* Màu nền đỏ nhạt */
-  color: #721c24;             /* Màu chữ đỏ đậm */
-  border: 1px solid #f5c6cb;  /* Viền đỏ nhạt */
-}
-
-/* Animation cho notification */
-@keyframes fadeIn {
-  from {
-    opacity: 0;            /* Bắt đầu trong suốt */
-    transform: translateY(-10px);  /* Vị trí bắt đầu cao hơn */
-  }
-  to {
-    opacity: 1;            /* Kết thúc hiện rõ */
-    transform: translateY(0);  /* Trở về vị trí gốc */
-  }
-}
-
-/* Responsive cho tablet */
-@media (max-width: 1024px) {
-  .contact-content {
-    gap: 30px;            /* Giảm khoảng cách */
-  }
-
-  .contact-form {
-    padding: 30px;        /* Giảm padding */
-  }
-}
-
-/* Responsive cho mobile */
-@media (max-width: 768px) {
-  .contact-section {
-    padding: 60px 0;      /* Giảm padding section */
-  }
-
-  .contact-content {
-    grid-template-columns: 1fr;  /* Chuyển layout thành 1 cột */
-    gap: 40px;            /* Tăng khoảng cách giữa info và form */
-  }
-
-  .section-title {
-    font-size: 2rem;      /* Giảm cỡ chữ tiêu đề */
-  }
-
-  .info-item {
-    padding-bottom: 20px;  /* Giảm padding dưới */
-    margin-bottom: 20px;   /* Giảm margin dưới */
-  }
-
-  .form-group {
-    margin-bottom: 20px;   /* Giảm khoảng cách giữa các input */
-  }
-}
-
-/* Section chính */
-.welcome-section {
-  padding: 80px 0;  /* Padding trên dưới */
-  background-color: var(--light-bg);  /* Màu nền từ biến CSS */
-}
-
-/* Nội dung chính */
-.welcome-content {
-  text-align: center;  /* Căn giữa nội dung */
-}
-
-/* Tiêu đề section */
-.section-title {
-  font-size: 2.5rem;  /* Cỡ chữ */
-  color: var(--text-color);  /* Màu chữ */
-  margin-bottom: 20px;  /* Khoảng cách dưới */
-  font-weight: 700;  /* Độ đậm chữ */
-}
-
-/* Mô tả section */
-.section-description {
-  font-size: 1.2rem;  /* Cỡ chữ */
-  color: var(--secondary-color);  /* Màu chữ phụ */
-  max-width: 800px;  /* Chiều rộng tối đa */
-  margin: 0 auto 50px;  /* Margin trên dưới và căn giữa */
-  line-height: 1.6;  /* Khoảng cách dòng */
-}
-
-/* Grid các tính năng */
-.features-grid {
-  display: grid;  /* Grid layout */
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));  /* Cột tự động */
-  gap: 30px;  /* Khoảng cách giữa các card */
-  margin-bottom: 50px;  /* Khoảng cách dưới */
-}
-
-/* Card tính năng */
-.feature-card {
-  background: white;  /* Nền trắng */
-  padding: 30px;  /* Padding đều */
-  border-radius: 10px;  /* Bo góc */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);  /* Đổ bóng */
-  transition: transform 0.3s ease;  /* Hiệu ứng */
-}
-
-/* Hiệu ứng hover cho card */
-.feature-card:hover {
-  transform: translateY(-5px);  /* Nâng card lên */
-}
-
-/* Icon trong card */
-.feature-card i {
-  font-size: 2.5rem;  /* Cỡ icon */
-  color: var(--primary-color);  /* Màu icon */
-  margin-bottom: 20px;  /* Khoảng cách dưới */
-}
-
-/* Tiêu đề trong card */
-.feature-card h3 {
-  font-size: 1.3rem;  /* Cỡ chữ */
-  color: var(--text-color);  /* Màu chữ */
-  margin-bottom: 15px;  /* Khoảng cách dưới */
-}
-
-/* Mô tả trong card */
-.feature-card p {
-  color: var(--secondary-color);  /* Màu chữ phụ */
-  line-height: 1.6;  /* Khoảng cách dòng */
-}
-
-/* Container cho CTA buttons */
-.welcome-cta {
-  display: flex;  /* Flexbox layout */
-  gap: 20px;  /* Khoảng cách giữa các nút */
-  justify-content: center;  /* Căn giữa */
-  margin-top: 40px;  /* Khoảng cách trên */
-}
-
-/* Style chung cho nút */
-.btn {
-  padding: 15px 30px;  /* Padding trong nút */
-  border-radius: 30px;  /* Bo tròn góc */
-  font-size: 1.1rem;  /* Cỡ chữ */
-  font-weight: 500;  /* Độ đậm chữ */
-  text-decoration: none;  /* Bỏ gạch chân */
-  transition: all 0.3s ease;  /* Hiệu ứng */
-  text-transform: uppercase;  /* Chữ hoa */
-  letter-spacing: 1px;  /* Khoảng cách chữ */
-}
-
-/* Nút primary */
-.btn-primary {
-  background-color: var(--primary-color);  /* Màu nền */
-  color: white;  /* Màu chữ */
-  border: none;  /* Bỏ viền */
-}
-
-/* Nút secondary */
-.btn-secondary {
-  background-color: transparent;  /* Nền trong suốt */
-  color: var(--primary-color);  /* Màu chữ */
-  border: 2px solid var(--primary-color);  /* Viền */
-}
-
-/* Hiệu ứng hover cho nút primary */
-.btn-primary:hover {
-  background-color: #0056b3;  /* Màu nền đậm hơn */
-  transform: translateY(-2px);  /* Nâng nút lên */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);  /* Đổ bóng */
-}
-
-/* Hiệu ứng hover cho nút secondary */
-.btn-secondary:hover {
-  background-color: var(--primary-color);  /* Màu nền */
-  color: white;  /* Màu chữ */
-  transform: translateY(-2px);  /* Nâng nút lên */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);  /* Đổ bóng */
-}
-
-/* Media queries cho responsive */
-@media (max-width: 768px) {
-  .welcome-section {
-    padding: 40px;  /* Giảm padding */
-  }
-
-  .section-title {
-    font-size: 2rem;  /* Giảm cỡ chữ */
-  }
-
-  .section-description {
-    font-size: 1.1rem;  /* Giảm cỡ chữ */
-    padding: 0 20px;  /* Thêm padding */
-  }
-
-  .features-grid {
-    grid-template-columns: 1fr;  /* 1 cột */
-    gap: 20px;  /* Giảm khoảng cách */
-  }
-
-  .welcome-cta {
-    flex-direction: column;  /* Chuyển layout thành dọc */
-    gap: 15px;  /* Giảm khoảng cách */
-  }
-
-  .btn {
-    width: 100%;  /* Chiều rộng 100% */
-    text-align: center;  /* Căn giữa text */
-  }
-}
-
-.social-links {
-  display: flex;
-  gap: 15px;
-  margin-top: 30px;
-}
-
-.social-link {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: #007bff;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-.social-link:hover {
-  background: #0056b3;
-} 

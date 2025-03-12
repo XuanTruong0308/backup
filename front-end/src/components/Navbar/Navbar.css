@@ -1,391 +1,204 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* Thanh điều hướng chính */
 .navbar {
-  background-color: white;          /* Nền trắng */
-  height: 70px;                     /* Chiều cao cố định */
-  display: flex;                    /* Sử dụng flexbox */
-  justify-content: center;          /* Căn giữa theo chiều ngang */
-  align-items: center;              /* Căn giữa theo chiều dọc */
-  position: fixed;                  /* Cố định navbar */
-  top: 0;                          /* Gắn vào đỉnh trang */
-  left: 0;                         /* Gắn vào bên trái */
-  right: 0;                        /* Gắn vào bên phải */
-  z-index: 1000;                   /* Đảm bảo hiển thị trên các phần tử khác */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);  /* Đổ bóng nhẹ */
+  background-color: #4070f4;
+  width: 100%;
+  height: 60px;
+  position: fixed;     /* Cố định navbar */
+  top: 0;             /* Cố định ở đỉnh trang */
+  left: 0;            /* Cố định từ mép trái */
+  right: 0;           /* Cố định đến mép phải */
+  z-index: 1000;      /* Đảm bảo hiển thị trên cùng */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hiệu ứng khi cuộn trang */
+.navbar.scrolled {
+  height: 60px;                 /* Giảm chiều cao xuống 60px khi cuộn */
+  background-color: rgba(255, 255, 255, 0.95);  /* Làm mờ nhẹ background */
 }
 
 /* Container chứa nội dung navbar */
 .navbar-container {
-  display: flex;                    /* Sử dụng flexbox */
-  justify-content: space-between;   /* Căn đều các phần tử */
-  align-items: center;              /* Căn giữa theo chiều dọc */
-  width: 100%;                      /* Chiều rộng 100% */
-  max-width: 1200px;               /* Giới hạn chiều rộng tối đa */
-  padding: 0 20px;                 /* Padding hai bên */
+  width: 100%;
+  max-width: 1200px;     /* Giới hạn chiều rộng tối đa */
+  padding: 0 20px;       /* Thêm padding hai bên */
+  display: flex;
+  justify-content: space-between; /* Phân bố không gian đều */
+  align-items: center;
 }
 
 /* Logo */
 .navbar-logo {
-  display: flex;                    /* Sử dụng flexbox */
-  align-items: center;              /* Căn giữa theo chiều dọc */
-  text-decoration: none;            /* Bỏ gạch chân */
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+  transition: all 0.3s ease;
 }
 
-.navbar-logo img {
-  height: 40px;                     /* Chiều cao logo */
-  width: auto;                      /* Chiều rộng tự động */
+.navbar-logo:hover {
+  color: #ffd700;
 }
 
 /* Menu chính */
 .nav-menu {
   display: flex;
   align-items: center;
-  list-style: none;
+  gap: 2rem;            /* Khoảng cách đều giữa các menu items */
   margin: 0;
   padding: 0;
-  height: 70px;                     /* Chiều cao cố định bằng navbar */
+  list-style: none;
 }
 
-/* Item trong menu */
+/* Items trong menu */
 .nav-item {
-  position: relative;       /* Để định vị dropdown menu */
-  height: 100%;              /* Chiều cao bằng navbar */
-  margin: 0 5px;    /*tạo khoảng cách giữa các items*/
-  display: flex;                    /* Sử dụng flexbox */
-  align-items: center;              /* Căn giữa theo chiều dọc */
+  position: relative;
+  margin: 0 5px;
 }
 
-/* Link trong menu */
+/* Links trong menu */
 .nav-link {
-  color: var(--text-color);         /* Màu chữ từ biến CSS */
-  text-decoration: none;            /* Bỏ gạch chân */
-  padding: 0 15px;                  /* Padding hai bên */
-  height: 100%;                     /* Chiều cao 100% */
-  display: flex;                    /* Sử dụng flexbox */
-  align-items: center;              /* Căn giữa theo chiều dọc */
-  cursor: pointer;                  /* Con trỏ pointer */
-  font-weight: 500;                 /* Độ đậm chữ */
-  transition: color 0.3s ease;      /* Hiệu ứng đổi màu */
-  white-space: nowrap;              /* Ngăn text xuống dòng */
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;    /* Padding đều cho các links */
 }
 
-/* Icon trong link */
-.nav-link i {
-  margin-left: 5px;                /* Khoảng cách với text */
-  font-size: 0.8rem;               /* Cỡ chữ icon */
-  transition: transform 0.3s ease;
+.nav-link:hover,
+.nav-link.active {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffd700;
 }
 
-/* Hiệu ứng hover cho link */
-.nav-link:hover {
-  color: var(--primary-color);      /* Đổi màu khi hover */
-}
-
-/* Menu dropdown */
+/* Dropdown menu */
 .dropdown-menu {
-  position: absolute;               /* Định vị tuyệt đối */
-  top: 100%;                       /* Hiển thị dưới nav-item */
-  left: 0;                         /* Căn trái */
-  background-color: white;         /* Nền trắng */
-  min-width: 220px;               /* Chiều rộng tối thiểu */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Đổ bóng đẹp hơn */
-  border-radius: 8px;             /* Bo góc lớn hơn */
-  padding: 8px 0;                /* Padding trên dưới */
-  opacity: 0;                     /* Ban đầu ẩn */
-  visibility: hidden;             /* Ban đầu ẩn */
-  transform: translateY(20px);    /* Dịch xuống 20px */
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Hiệu ứng mượt mà */
-  z-index: 1001;                    /* Cao hơn navbar để hiển thị đè lên */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  min-width: 200px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
 }
 
-/* Hiển thị dropdown khi hover */
 .nav-item:hover .dropdown-menu {
-  opacity: 1;                     /* Hiện dropdown */
-  visibility: visible;            /* Hiện dropdown */
-  transform: translateY(0);       /* Trở về vị trí gốc */
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
-/* Item trong dropdown */
 .dropdown-menu li {
-  list-style: none;              /* Bỏ dấu chấm */
+  list-style: none;
 }
 
-/* Link trong dropdown */
 .dropdown-menu a {
-  color: var(--text-color);      /* Màu chữ */
-  padding: 12px 20px;           /* Padding */
-  display: flex;               /* Sử dụng flexbox */
-  align-items: center;         /* Căn giữa theo chiều dọc */
-  text-decoration: none;        /* Bỏ gạch chân */
-  transition: all 0.3s ease;    /* Hiệu ứng */
-  font-size: 0.95rem;          /* Cỡ chữ nhỏ hơn menu chính */
-  white-space: nowrap;          /* Ngăn text xuống dòng */
+  color: #333333;
+  padding: 10px 20px;
+  display: block;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
-/* Hiệu ứng hover cho link dropdown */
 .dropdown-menu a:hover {
-  background: rgba(0, 123, 255, 0.05);    /* Màu nền nhẹ khi hover */
-  color: var(--primary-color);  /* Màu chữ primary */
-  padding-left: 25px;                 /* Thụt vào khi hover */
+  background-color: #f8f9fa;
+  color: #2563eb;
 }
 
-/* Nút trong navbar */
-.nav-button {
-  height: 40px;
-  padding: 0 20px;
-  background-color: var(--primary-color);  /* Màu nền */
-  color: white;                 /* Màu chữ */
-  border: none;                /* Bỏ viền */
-  border-radius: 5px;          /* Bo góc */
-  margin-left: 15px;           /* Margin trái */
-  cursor: pointer;             /* Con trỏ pointer */
-  font-weight: 500;            /* Độ đậm chữ */
-  transition: all 0.3s ease;   /* Hiệu ứng */
-  white-space: nowrap;          /* Ngăn text xuống dòng */
-}
-
-/* Hiệu ứng hover cho nút */
-.nav-button:hover {
-  background-color: #0056b3;   /* Màu nền đậm hơn */
-  transform: translateY(-2px); /* Nâng nút lên */
-}
-
-/* Icon menu mobile */
+/* Menu icon cho mobile */
 .menu-icon {
-  display: none;              /* Ẩn trên desktop */
-  font-size: 1.5rem;         /* Cỡ chữ */
-  cursor: pointer;           /* Con trỏ pointer */
+  display: none;
+  color: #ffffff;
+  font-size: 24px;
+  cursor: pointer;
 }
 
-/* Responsive cho mobile */
+/* Responsive Design */
 @media screen and (max-width: 960px) {
   .menu-icon {
-    display: block;          /* Hiện icon menu */
+    display: block;
   }
 
   .nav-menu {
-    display: none;           /* Ẩn menu */
-    flex-direction: column;  /* Chuyển layout thành dọc */
-    width: 100%;            /* Chiều rộng 100% */
-    height: auto;           /* Chiều cao tự động */
-    position: absolute;     /* Định vị tuyệt đối */
-    top: 70px;             /* Cách top 70px */
-    left: 0;               /* Căn trái */
-    background-color: white; /* Nền trắng */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Đổ bóng */
-    padding: 20px 0;       /* Padding trên dưới */
-    z-index: 1002;          /* Cao nhất khi menu mobile mở ra */
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #2563eb;
+    padding: 20px 0;
+    flex-direction: column;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   }
 
   .nav-menu.active {
-    display: flex;              /* Hiển thị menu dạng flexbox */
+    display: flex;
   }
 
   .nav-item {
-    height: auto;               /* Chiều cao tự động */
-    width: 100%;               /* Chiều rộng 100% */
-    margin: 0;
-  }
-
-  .nav-link {
-    padding: 15px 20px;        /* Tăng padding cho dễ chạm */
-    width: 100%;               /* Chiều rộng 100% */
-    justify-content: space-between;  /* Căn đều nội dung */
+    margin: 10px 0;
+    width: 100%;
+    text-align: center;
   }
 
   .dropdown-menu {
-    position: static;          /* Đổi thành static trên mobile */
-    box-shadow: none;         /* Bỏ đổ bóng */
-    opacity: 1;               /* Luôn hiện */
-    visibility: visible;      /* Luôn visible */
-    transform: none;          /* Không dùng transform */
-    padding-left: 20px;       /* Thụt vào bên trái */
-    display: none;            /* Ban đầu ẩn */
-    background: #f8f9fa;      /* Màu nền nhẹ để phân biệt */
-    border-radius: 0;        /* Bỏ bo góc */
-    width: 100%;              /* Chiều rộng 100% */
+    position: static;
+    background-color: transparent;
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    display: none;
   }
 
   .nav-item:hover .dropdown-menu {
-    display: block;           /* Hiển thị dạng block */
+    display: block;
   }
 
   .dropdown-menu a {
-    padding: 12px 30px;         /* Tăng padding cho dễ chạm */
+    color: #ffffff;
+    padding: 10px;
   }
 
-  .nav-button {
-    margin: 15px 20px;          /* Margin trên dưới và hai bên */
-    width: calc(100% - 40px);   /* Chiều rộng 100% trừ margin */
-  }
-}
-
-/* Animation cho mobile menu */
-@keyframes fadeIn {
-  from {
-    opacity: 0;            /* Bắt đầu trong suốt */
-    transform: translateY(-10px); /* Vị trí bắt đầu */
-  }
-  to {
-    opacity: 1;           /* Kết thúc hiện rõ */
-    transform: translateY(0); /* Vị trí kết thúc */
+  .dropdown-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffd700;
   }
 }
 
-/* Áp dụng animation cho từng item */
-.nav-menu.active .nav-item {
-  animation: fadeIn 0.5s ease forwards;
-  opacity: 0;
+/* Điều chỉnh margin cho main content */
+.main-content {
+  padding-top: 60px;  /* Bằng với chiều cao của navbar */
 }
 
-/* Delay animation cho từng item */
-.nav-menu.active .nav-item:nth-child(1) { animation-delay: 0.1s; }
-.nav-menu.active .nav-item:nth-child(2) { animation-delay: 0.2s; }
-.nav-menu.active .nav-item:nth-child(3) { animation-delay: 0.3s; }
-.nav-menu.active .nav-item:nth-child(4) { animation-delay: 0.4s; }
-.nav-menu.active .nav-item:nth-child(5) { animation-delay: 0.5s; }
-.nav-menu.active .nav-item:nth-child(6) { animation-delay: 0.6s; }
-.nav-menu.active .nav-item:nth-child(7) { animation-delay: 0.7s; }
-
-/* Responsive navbar cho màn hình nhỏ */
-@media (max-width: 768px) {
-  .navbar-menu {
-    display: none; /* Ẩn menu trên mobile - cần bổ sung toggle button */
-  }
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1rem;
 }
 
-/* Style cho nav-item trên mobile */
-.nav-item {
-    height: auto;               /* Chiều cao tự động */
-    width: 100%;               /* Chiều rộng 100% */
+.navbar a {
+  color: white;
+  text-decoration: none;
 }
 
-/* Style cho nav-link trên mobile */
-.nav-link {
-    padding: 15px 20px;        /* Tăng padding cho dễ chạm */
-    width: 100%;               /* Chiều rộng 100% */
-    justify-content: space-between;  /* Căn đều nội dung */
+.admin-menu {
+  margin-left: auto;
 }
 
-/* Style cho dropdown menu trên mobile */
-.dropdown-menu {
-    position: static;          /* Đổi từ absolute sang static */
-    opacity: 1;               /* Luôn hiện */
-    visibility: visible;      /* Luôn visible */
-    transform: none;          /* Bỏ transform */
-    box-shadow: none;         /* Bỏ đổ bóng */
-    padding-left: 20px;       /* Thêm padding trái để lùi vào */
-    display: none;            /* Ban đầu ẩn */
-}
-
-/* Hiển thị dropdown khi hover trên mobile */
-.nav-item:hover .dropdown-menu {
-    display: block;           /* Hiển thị dạng block */
-}
-
-/* Style cho nút trên mobile */
-.nav-button {
-    margin: 15px 20px;        /* Margin trên dưới và hai bên */
-    width: calc(100% - 40px); /* Chiều rộng 100% trừ margin */
-}
-
-/* Style cho container của dropdown */
-.nav-item.dropdown {
-  position: relative;        /* Để định vị dropdown menu */
-  height: 70px;             /* Chiều cao cố định bằng navbar */
-  display: flex;            /* Sử dụng flexbox */
-  align-items: center;      /* Căn giữa theo chiều dọc */
-}
-
-/* Style cho dropdown trigger (nút kích hoạt) */
-.nav-item.dropdown .nav-link {
-  display: flex;            /* Sử dụng flexbox */
-  align-items: center;      /* Căn giữa theo chiều dọc */
-  gap: 5px;                /* Khoảng cách giữa text và icon */
-  cursor: pointer;         /* Con trỏ pointer khi hover */
-}
-
-/* Style cho icon mũi tên */
-.nav-item.dropdown .nav-link i {
-  font-size: 12px;         /* Kích thước icon nhỏ hơn */
-  transition: transform 0.3s ease; /* Hiệu ứng xoay mũi tên */
-}
-
-/* Xoay mũi tên khi hover */
-.nav-item.dropdown:hover .nav-link i {
-  transform: rotate(180deg); /* Xoay mũi tên 180 độ */
-}
-
-/* Style cho dropdown menu */
-.dropdown-menu {
-  position: absolute;       /* Định vị tuyệt đối */
-  top: 100%;               /* Hiển thị ngay dưới nav-item */
-  left: 0;                 /* Căn trái */
-  min-width: 220px;        /* Chiều rộng tối thiểu */
-  background: white;       /* Nền trắng */
-  border-radius: 8px;      /* Bo góc lớn hơn */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Đổ bóng đẹp hơn */
-  opacity: 0;              /* Ban đầu ẩn */
-  visibility: hidden;      /* Ban đầu ẩn */
-  transform: translateY(20px); /* Dịch xuống 20px */
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Hiệu ứng mượt mà */
-  padding: 8px 0;         /* Padding trên dưới */
-  z-index: 100;           /* Đảm bảo hiển thị trên các phần tử khác */
-}
-
-/* Hiển thị dropdown khi hover */
-.nav-item.dropdown:hover .dropdown-menu {
-  opacity: 1;             /* Hiện dropdown */
-  visibility: visible;    /* Hiện dropdown */
-  transform: translateY(0); /* Trở về vị trí gốc */
-}
-
-/* Style cho items trong dropdown */
-.dropdown-menu li {
-  list-style: none;       /* Bỏ dấu chấm */
-}
-
-.dropdown-menu a {
-  color: var(--text-color); /* Màu chữ */
-  padding: 12px 20px;     /* Padding trong */
-  display: flex;          /* Sử dụng flexbox */
-  align-items: center;    /* Căn giữa theo chiều dọc */
-  text-decoration: none;  /* Bỏ gạch chân */
-  transition: all 0.3s ease; /* Hiệu ứng */
-  font-size: 0.95rem;    /* Cỡ chữ nhỏ hơn menu chính */
-}
-
-/* Hiệu ứng hover cho items trong dropdown */
-.dropdown-menu a:hover {
-  background: rgba(0, 123, 255, 0.05); /* Màu nền nhẹ khi hover */
-  color: var(--primary-color);        /* Màu chữ primary */
-  padding-left: 25px;                 /* Thụt vào khi hover */
-}
-
-/* Responsive styles cho mobile */
-@media screen and (max-width: 960px) {
-  .dropdown-menu {
-    position: static;        /* Đổi thành static trên mobile */
-    box-shadow: none;        /* Bỏ đổ bóng */
-    opacity: 1;             /* Luôn hiện */
-    visibility: visible;    /* Luôn visible */
-    transform: none;        /* Không dùng transform */
-    padding-left: 20px;    /* Thụt vào bên trái */
-    display: none;         /* Ban đầu ẩn */
-    background: #f8f9fa;   /* Màu nền nhẹ để phân biệt */
-    border-radius: 0;      /* Bỏ bo góc */
-    width: 100%;          /* Chiều rộng 100% */
-  }
-
-  .nav-item.dropdown:hover .dropdown-menu {
-    display: block;        /* Hiển thị khi hover trên mobile */
-  }
-
-  .dropdown-menu a {
-    padding: 12px 30px;   /* Tăng padding cho dễ chạm */
-  }
-
-  /* Xoay mũi tên trên mobile */
-  .nav-item.dropdown.active .nav-link i {
-    transform: rotate(180deg); /* Xoay khi active */
-  }
+.admin-menu a {
+  color: #ffd700; /* Màu vàng để phân biệt menu admin */
 }

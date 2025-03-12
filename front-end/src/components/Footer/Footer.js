@@ -1,5 +1,6 @@
 import React from 'react';
 import './Footer.css';
+import logo from '../../assets/images/image-removebg-preview.png';
 
 const Footer = () => {
   // Lấy năm hiện tại cho copyright
@@ -12,7 +13,7 @@ const Footer = () => {
           <div className="footer-content">
             <div className="footer-about">
               <div className="footer-logo">
-                <img src="../../images/logo.png" alt="TechKids Logo" />
+                <img src={logo} alt="TechKids Logo" />
                 <span>TechKids</span>
               </div>
               <p>

@@ -1,0 +1,106 @@
+/* Container chính */
+.login-container {
+    display: flex;                /* Sử dụng flexbox để tạo layout linh hoạt */
+    justify-content: center;      /* Căn giữa theo chiều ngang */
+    align-items: center;          /* Căn giữa theo chiều dọc */
+    min-height: 100vh;           /* Chiều cao tối thiểu bằng chiều cao màn hình */
+    background-color: #f5f5f5;   /* Màu nền xám nhạt */
+    padding: 20px;               /* Khoảng đệm 20px xung quanh */
+  }
+  
+  /* Box chứa form */
+  .login-box {
+    background: white;           /* Nền màu trắng */
+    padding: 30px;              /* Khoảng đệm 30px xung quanh */
+    border-radius: 10px;        /* Bo tròn góc 10px */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);  /* Đổ bóng nhẹ */
+    width: 100%;               /* Chiều rộng 100% */
+    max-width: 400px;          /* Chiều rộng tối đa 400px */
+  }
+  
+  /* Tiêu đề h2 trong login-box */
+  .login-box h2 {
+    text-align: center;        /* Căn giữa chữ */
+    color: #333;              /* Màu chữ xám đậm */
+    margin-bottom: 30px;      /* Khoảng cách dưới 30px */
+  }
+  
+  /* Nhóm form */
+  .form-group {
+    margin-bottom: 20px;      /* Khoảng cách dưới 20px */
+  }
+  
+  /* Label trong form */
+  .form-group label {
+    display: block;           /* Hiển thị dạng block (xuống dòng) */
+    margin-bottom: 8px;       /* Khoảng cách dưới 8px */
+    color: #555;             /* Màu chữ xám */
+    font-weight: 500;        /* Độ đậm chữ */
+  }
+  
+  /* Input trong form */
+  .form-group input {
+    width: 100%;             /* Chiều rộng 100% */
+    padding: 12px;           /* Khoảng đệm trong 12px */
+    border: 1px solid #ddd;  /* Viền 1px màu xám nhạt */
+    border-radius: 5px;      /* Bo tròn góc 5px */
+    font-size: 16px;         /* Cỡ chữ 16px */
+    transition: border-color 0.3s;  /* Hiệu ứng chuyển màu viền trong 0.3s */
+  }
+  
+  /* Trạng thái focus của input */
+  .form-group input:focus {
+    border-color: #007bff;   /* Đổi màu viền khi focus */
+    outline: none;           /* Bỏ viền focus mặc định */
+  }
+  
+  /* Nút đăng nhập */
+  .login-button {
+    width: 100%;             /* Chiều rộng 100% */
+    padding: 12px;           /* Khoảng đệm 12px */
+    background-color: #007bff; /* Màu nền xanh */
+    color: white;            /* Chữ màu trắng */
+    border: none;            /* Không có viền */
+    border-radius: 5px;      /* Bo tròn góc 5px */
+    font-size: 16px;         /* Cỡ chữ 16px */
+    cursor: pointer;         /* Con trỏ dạng bàn tay */
+    transition: background-color 0.3s;  /* Hiệu ứng đổi màu nền */
+  }
+  
+  /* Hiệu ứng hover nút */
+  .login-button:hover {
+    background-color: #0056b3;  /* Màu nền đậm hơn khi hover */
+  }
+  
+  /* Thông báo lỗi */
+  .error-message {
+    background-color: #fff3f3;  /* Nền màu đỏ nhạt */
+    color: #dc3545;            /* Chữ màu đỏ */
+    padding: 10px;             /* Khoảng đệm 10px */
+    border-radius: 5px;        /* Bo tròn góc 5px */
+    margin-bottom: 20px;       /* Khoảng cách dưới 20px */
+    text-align: center;        /* Căn giữa chữ */
+  }
+  
+  /* Phần chứa links */
+  .auth-links {
+    margin-top: 20px;         /* Khoảng cách trên 20px */
+    text-align: center;       /* Căn giữa chữ */
+  }
+  
+  /* Links */
+  .auth-links a {
+    color: #007bff;          /* Màu chữ xanh */
+    text-decoration: none;    /* Bỏ gạch chân */
+  }
+  
+  /* Hiệu ứng hover links */
+  .auth-links a:hover {
+    text-decoration: underline;  /* Thêm gạch chân khi hover */
+  }
+  
+  /* Đoạn văn trong auth-links */
+  .auth-links p {
+    margin-top: 10px;        /* Khoảng cách trên 10px */
+    color: #666;             /* Màu chữ xám */
+  }

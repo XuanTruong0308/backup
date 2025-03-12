@@ -1,0 +1,114 @@
+/* Container chính cho toàn bộ chương trình */
+.course-program {
+    padding: 40px 0;                /* Tạo khoảng cách trên dưới 40px */
+    background-color: #f5f7fa;      /* Màu nền xám nhạt */
+  }
+  
+  /* Container giới hạn độ rộng và căn giữa nội dung */
+  .container {
+    max-width: 1200px;              /* Giới hạn độ rộng tối đa */
+    margin: 0 auto;                 /* Căn giữa container */
+    padding: 0 20px;                /* Tạo khoảng cách hai bên */
+  }
+  
+  /* Tiêu đề chính của chương trình */
+  .program-title {
+    text-align: center;             /* Căn giữa tiêu đề */
+    margin-bottom: 40px;            /* Khoảng cách dưới tiêu đề */
+    color: #333;                    /* Màu chữ xám đậm */
+    font-size: 32px;                /* Kích thước chữ lớn */
+  }
+  
+  /* Phần điều hướng tab */
+  .program-tabs {
+    display: flex;                  /* Sử dụng flexbox */
+    justify-content: center;        /* Căn giữa các tab */
+    gap: 10px;                      /* Khoảng cách giữa các tab */
+    margin-bottom: 30px;            /* Khoảng cách với nội dung bên dưới */
+  }
+  
+  /* Nút tab */
+  .tab-btn {
+    padding: 12px 24px;             /* Padding trong nút */
+    border: none;                   /* Bỏ viền */
+    border-radius: 4px;             /* Bo góc nút */
+    background: #fff;               /* Nền trắng */
+    color: #666;                    /* Màu chữ xám */
+    cursor: pointer;                /* Con trỏ pointer khi hover */
+    transition: all 0.3s ease;      /* Hiệu ứng chuyển đổi mượt */
+  }
+  
+  /* Trạng thái active của nút tab */
+  .tab-btn.active {
+    background: #2563eb;            /* Nền xanh khi active */
+    color: #fff;                    /* Chữ trắng khi active */
+  }
+  
+  /* Phần nội dung của tab */
+  .tab-content {
+    background: #fff;               /* Nền trắng */
+    padding: 30px;                  /* Padding nội dung */
+    border-radius: 8px;             /* Bo góc */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);  /* Đổ bóng nhẹ */
+  }
+  
+  /* Phần section nội dung */
+  .content-section {
+    max-width: 800px;               /* Giới hạn độ rộng tối đa */
+    margin: 0 auto;                 /* Căn giữa nội dung */
+  }
+  
+  /* Tiêu đề h2 trong section */
+  .content-section h2 {
+    color: #333;                    /* Màu chữ xám đậm */
+    margin-bottom: 20px;            /* Khoảng cách dưới */
+  }
+  
+  /* Tiêu đề h3 trong section */
+  .content-section h3 {
+    color: #444;                    /* Màu chữ xám nhạt hơn h2 */
+    margin: 20px 0 10px;            /* Khoảng cách trên dưới */
+  }
+  
+  /* Danh sách không có dấu đầu dòng */
+  .content-section ul {
+    list-style-type: none;          /* Bỏ dấu đầu dòng mặc định */
+    padding: 0;                     /* Bỏ padding mặc định */
+  }
+  
+  /* Item trong danh sách */
+  .content-section li {
+    padding: 8px 0;                 /* Padding trên dưới */
+    position: relative;             /* Để định vị dấu chấm */
+    padding-left: 20px;             /* Tạo khoảng trống cho dấu chấm */
+  }
+  
+  /* Dấu chấm tùy chỉnh cho list item */
+  .content-section li:before {
+    content: "•";                   /* Thêm dấu chấm */
+    color: #2563eb;                 /* Màu xanh cho dấu chấm */
+    position: absolute;             /* Định vị tuyệt đối */
+    left: 0;                        /* Đặt sát lề trái */
+  }
+  
+  /* Phần chương học */
+  .chapter {
+    margin-bottom: 20px;            /* Khoảng cách giữa các chương */
+  }
+  
+  /* Tiêu đề chương */
+  .chapter h4 {
+    color: #555;                    /* Màu chữ xám */
+    margin-bottom: 10px;            /* Khoảng cách dưới */
+  }
+  
+  /* Responsive cho màn hình nhỏ */
+  @media (max-width: 768px) {
+    .program-tabs {
+      flex-wrap: wrap;              /* Cho phép các tab xuống dòng */
+    }
+  
+    .tab-btn {
+      width: calc(50% - 5px);       /* Mỗi tab chiếm 50% chiều rộng trừ gap */
+    }
+  }
